@@ -2,21 +2,21 @@
 import Layout from '../layouts/Layout.astro';
 
 const images = [
-  { src: '/images/gallery/couple-street-laughing.jpg', alt: 'Couple laughing together in a stone-walled street' },
-  { src: '/images/gallery/wedding-bridge-nature.jpg', alt: 'Wedding couple on a wooden bridge surrounded by nature' },
-  { src: '/images/gallery/couple-closeup-intimate.jpg', alt: 'Intimate close-up portrait of a couple' },
-  { src: '/images/gallery/couple-almost-kiss-golden.jpg', alt: 'Couple about to kiss with golden sunset light' },
-  { src: '/images/gallery/wedding-playful-hug.jpg', alt: 'Playful wedding hug in a tree-lined path' },
-  { src: '/images/gallery/couple-field-sunset.jpg', alt: 'Couple embracing in a field at sunset' },
-  { src: '/images/gallery/couple-walking-avenue.jpg', alt: 'Couple walking together through a city avenue' },
-  { src: '/images/gallery/wedding-silhouettes-golden.jpg', alt: 'Wedding silhouettes bathed in golden light' },
-  { src: '/images/gallery/couple-lamppost-sunset.jpg', alt: 'Intimate moment by a lamppost at sunset' },
-  { src: '/images/gallery/couple-tender-touch.jpg', alt: 'Tender touch between a couple with traditional architecture' },
-  { src: '/images/gallery/couple-kiss-backlight.jpg', alt: 'Passionate kiss with backlight at golden hour' },
-  { src: '/images/gallery/wedding-bride-portrait.jpg', alt: 'Bride portrait with floral headpiece at sunset' },
-  { src: '/images/gallery/couple-lensflare-magic.jpg', alt: 'Couple with magical sun lens flare between them' },
-  { src: '/images/gallery/wedding-almost-kiss.jpg', alt: 'Wedding couple about to kiss at sunset' },
-  { src: '/images/gallery/couple-embrace-sunset.jpg', alt: 'Couple embracing outdoors at golden hour' },
+  { src: '/images/gallery/madrid-couple-photography-tender-moment.jpg', alt: 'Couple photography in Madrid - tender moment with traditional architecture' },
+  { src: '/images/gallery/madrid-couple-photography-laughing-stone-street.jpg', alt: 'Couple photography in Madrid - laughing together in a stone-walled street' },
+  { src: '/images/gallery/madrid-couple-photography-sunset-field.jpg', alt: 'Couple photography in Madrid - embracing in a field at sunset' },
+  { src: '/images/gallery/madrid-wedding-photography-playful-hug.jpg', alt: 'Madrid wedding photography - playful hug in a tree-lined path' },
+  { src: '/images/gallery/madrid-couple-photography-passionate-kiss.jpg', alt: 'Couple photography in Madrid - passionate kiss at golden hour' },
+  { src: '/images/gallery/madrid-couple-photography-walking-avenue.jpg', alt: 'Madrid couple photography - walking together through a city avenue' },
+  { src: '/images/gallery/madrid-couple-photography-romantic-sunset.jpg', alt: 'Romantic couple photography in Madrid - intimate moment at sunset' },
+  { src: '/images/gallery/madrid-wedding-bride-portrait-sunset.jpg', alt: 'Madrid wedding photography - bride portrait with floral headpiece at sunset' },
+  { src: '/images/gallery/madrid-couple-photography-golden-hour-kiss.jpg', alt: 'Golden hour couple photography in Madrid - about to kiss at sunset' },
+  { src: '/images/gallery/madrid-couple-photography-magical-light.jpg', alt: 'Madrid couple photography - magical sun flare between lovers' },
+  { src: '/images/gallery/madrid-couple-portrait-intimate-closeup.jpg', alt: 'Intimate couple portrait photography in Madrid - romantic close-up' },
+  { src: '/images/gallery/madrid-wedding-photography-sunset-kiss.jpg', alt: 'Wedding photography in Madrid - couple about to kiss at sunset' },
+  { src: '/images/gallery/madrid-wedding-photography-nature-bridge.jpg', alt: 'Wedding photography in Madrid - couple on a wooden bridge surrounded by nature' },
+  { src: '/images/gallery/madrid-wedding-photography-golden-silhouettes.jpg', alt: 'Madrid wedding photography - silhouettes bathed in golden light' },
+  { src: '/images/gallery/madrid-couple-photography-outdoor-embrace.jpg', alt: 'Outdoor couple photography in Madrid - embracing at golden hour' },
 ];
 ---
 
@@ -26,8 +26,8 @@ const images = [
   currentPage="gallery"
   alternateKo="/ko/gallery/"
 >
-  <!-- Masonry Gallery Grid - Le Petit Loup Style -->
-  <section class="py-2">
+  <!-- Masonry Gallery -->
+  <section class="py-4">
     <div class="masonry-grid">
       {images.map((image, index) => (
         <a href={image.src} class="masonry-item glightbox" data-gallery="gallery">
