@@ -1,45 +1,58 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import PhotoCarousel from '../components/PhotoCarousel.astro';
+
+const carouselImages = [
+  { src: '/images/gallery/madrid-couple-photography-sunset-field.jpg', alt: 'Couple photography in Madrid sunset field' },
+  { src: '/images/gallery/madrid-wedding-bride-portrait-sunset.jpg', alt: 'Bride portrait at sunset in Madrid' },
+  { src: '/images/gallery/madrid-couple-photography-laughing-stone-street.jpg', alt: 'Couple laughing on stone street in Madrid' },
+  { src: '/images/gallery/madrid-wedding-photography-nature-bridge.jpg', alt: 'Wedding photography at nature bridge in Madrid' },
+  { src: '/images/gallery/madrid-couple-photography-golden-hour-kiss.jpg', alt: 'Couple kiss during golden hour in Madrid' },
+  { src: '/images/gallery/madrid-couple-photography-romantic-sunset.jpg', alt: 'Romantic sunset couple photography in Madrid' },
+  { src: '/images/gallery/madrid-wedding-photography-golden-silhouettes.jpg', alt: 'Wedding golden silhouettes in Madrid' },
+  { src: '/images/gallery/madrid-couple-photography-walking-avenue.jpg', alt: 'Couple walking along avenue in Madrid' },
+];
 
 const packages = [
   {
-    name: 'Golden Hour',
-    duration: '1 hour',
-    photos: '30+ edited photos',
-    price: '180',
+    name: 'Madrid Quick Snap',
+    duration: '30-60 minutes',
+    photos: '25+ edited photos',
+    price: '200',
     features: [
       'Professional editing',
-      'Private online gallery',
       'High-resolution downloads',
-      'One iconic location',
+      '1 iconic location or neighborhood walk',
     ],
   },
   {
     name: 'Madrid Classic',
-    duration: '2 hours',
+    duration: '90+ minutes',
     photos: '60+ edited photos',
-    price: '320',
+    price: '380',
     features: [
       'Professional editing',
-      'Private online gallery',
       'High-resolution downloads',
-      'Multiple locations',
-      'Outfit change',
+      '2-3 iconic locations',
+      '1 outfit change',
+      'Personalised route consultation',
     ],
     featured: true,
   },
   {
-    name: 'Full Experience',
-    duration: '3 hours',
-    photos: '100+ edited photos',
-    price: '450',
+    name: 'The Castizo Experience',
+    duration: '4+ hours',
+    photos: '150+ edited photos',
+    price: '700',
     features: [
       'Professional editing',
-      'Private online gallery',
       'High-resolution downloads',
-      'Multiple locations',
-      'Outfit changes',
-      'Sunset session included',
+      'Multiple sessions throughout the day',
+      '4-5 locations (landmarks + hidden gems)',
+      'Multiple outfit changes',
+      'Local recommendations (tapas, flamenco, historic spots)',
+      'Personalised full-day itinerary',
+      'Sneak peek within 48 hours',
     ],
   },
 ];
@@ -47,14 +60,17 @@ const packages = [
 
 <Layout
   title="Services & Pricing"
-  description="Professional couple photography packages in Madrid starting at 180 euros. Choose from Golden Hour, Madrid Classic, or Full Experience sessions."
+  description="Professional couple photography packages in Madrid. Choose from Madrid Quick Snap, Madrid Classic, or The Castizo Experience sessions."
   currentPage="services"
   alternateKo="/ko/services/"
 >
   <!-- Hero Intro -->
   <section class="section">
     <div class="content-narrow text-block-centered">
-      <h1 style="font-size: 2.8rem; line-height: 1.2;">Capturing your love story in Madrid's most beautiful locations</h1>
+      <h1 style="font-size: 18px; line-height: 1.4; text-transform: uppercase; letter-spacing: 0.15em;">Capturing your love story in Madrid's most beautiful locations</h1>
+    </div>
+    <PhotoCarousel images={carouselImages} height="400px" />
+    <div class="content-narrow text-block-centered">
       <p class="mt-8">
         Madrid isn't just a city; it's a canvas of endless beauty and charm. From the grand plazas to the golden sunsets over the Royal Palace, every corner tells a story. At Madrid Amor Photography, we don't just take pictures; we craft experiences. Whether it's a solo adventure, a romantic couple's photoshoot, a pre-wedding session, or a joyful family gathering, we're here to make each moment unforgettable.
       </p>
@@ -70,28 +86,19 @@ const packages = [
     </div>
   </section>
 
-  <!-- Photo Grid -->
-  <section class="py-2">
-    <div class="grid grid-cols-3 gap-2">
-      <img src="/images/gallery/photo-1.jpg" alt="Madrid couple photography" class="w-full aspect-square object-cover" />
-      <img src="/images/gallery/photo-2.jpg" alt="Romantic photoshoot Madrid" class="w-full aspect-square object-cover" />
-      <img src="/images/gallery/photo-3.jpg" alt="Love story Madrid" class="w-full aspect-square object-cover" />
-    </div>
-  </section>
 
-  <!-- Service Section 1: Golden Hour -->
-  <section class="section">
+  <!-- Service Section 1: Madrid Quick Snap -->
+  <section class="section bg-gray-50">
     <div class="content-wrapper">
       <div class="service-section">
         <div class="service-image">
-          <img src="/images/gallery/photo-4.jpg" alt="Golden Hour Session" class="w-full aspect-[4/5] object-cover" />
+          <img src="/images/gallery/photo-4.jpg" alt="Madrid Quick Snap Session" class="w-full aspect-[4/5] object-cover" />
         </div>
         <div class="service-content">
-          <p class="text-xs uppercase tracking-widest text-gray-400 mb-4">Starting at €180</p>
-          <h2>Golden Hour</h2>
+          <p class="text-xs uppercase tracking-widest text-gray-400 mb-4">Quick & Easy</p>
+          <h2>Madrid Quick Snap</h2>
           <p class="my-6">
-            Perfect for couples who want to capture the magic of Madrid's famous golden light.
-            A 1-hour session at one iconic location, delivering 30+ professionally edited photos.
+            Perfect for visitors with a packed itinerary who still want stunning photos to remember Madrid by. In just 30 to 60 minutes, we'll make the most of one beautiful location — a sun-drenched corner of Retiro Park, the colorful streets of La Latina, or a stroll through the historic center. No long commitment, no complicated planning — just show up, have fun, and walk away with beautiful memories.
           </p>
           <div class="package-list">
             <h4>Includes:</h4>
@@ -101,14 +108,15 @@ const packages = [
               ))}
             </ul>
           </div>
-          <a href="/contact/" class="btn-simple">Enquire</a>
+          <p class="text-2xl text-terracotta mb-6" style="font-family: 'Chulapa', Georgia, serif;">From €200</p>
+          <a href="/contact/?package=quick-snap" class="btn-simple">Enquire</a>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Service Section 2: Madrid Classic -->
-  <section class="section bg-gray-50">
+  <section class="section">
     <div class="content-wrapper">
       <div class="service-section">
         <div class="service-image">
@@ -118,8 +126,7 @@ const packages = [
           <p class="text-xs uppercase tracking-widest text-terracotta mb-4">Most Popular</p>
           <h2>Madrid Classic</h2>
           <p class="my-6">
-            Our signature experience. Explore multiple iconic Madrid locations over 2 hours,
-            with time for an outfit change. You'll receive 60+ beautifully edited photos.
+            Our Madrid Classic Session is designed for those who wish to immerse themselves in the Madrid experience. Over 90 minutes or more, we'll explore at least two of the city's most stunning locations — from the golden glow of sunset at the Royal Palace to the timeless charm of Plaza Mayor and the hidden corners of the literary quarter. This is our signature session: unhurried, versatile, and crafted to capture the full spectrum of your story. It includes a personalised consultation to design the perfect route, so the session feels completely effortless.
           </p>
           <div class="package-list">
             <h4>Includes:</h4>
@@ -129,26 +136,25 @@ const packages = [
               ))}
             </ul>
           </div>
-          <p class="text-2xl text-terracotta mb-6" style="font-family: 'Chulapa', Georgia, serif;">€320</p>
-          <a href="/contact/" class="btn-simple">Enquire</a>
+          <p class="text-2xl text-terracotta mb-6" style="font-family: 'Chulapa', Georgia, serif;">From €380</p>
+          <a href="/contact/?package=madrid-classic" class="btn-simple">Enquire</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Service Section 3: Full Experience -->
-  <section class="section">
+  <!-- Service Section 3: Full Day in Madrid -->
+  <section class="section bg-gray-50">
     <div class="content-wrapper">
       <div class="service-section">
         <div class="service-image">
-          <img src="/images/gallery/photo-6.jpg" alt="Full Experience Session" class="w-full aspect-[4/5] object-cover" />
+          <img src="/images/gallery/photo-6.jpg" alt="The Castizo Experience Session" class="w-full aspect-[4/5] object-cover" />
         </div>
         <div class="service-content">
-          <p class="text-xs uppercase tracking-widest text-gray-400 mb-4">Premium Package</p>
-          <h2>Full Experience</h2>
+          <p class="text-xs uppercase tracking-widest text-gray-400 mb-4">The Full Experience</p>
+          <h2>The Castizo Experience</h2>
           <p class="my-6">
-            The ultimate Madrid photography experience. 3 hours exploring the city's most romantic spots,
-            including a sunset session. Over 100 professionally edited photos to treasure forever.
+            More than a photoshoot — a full day with a local who happens to take incredible pictures. I'm not your tour guide; I'm your friend who lives in Madrid. We'll meet at different moments throughout the day — early morning light, golden hour, even after dark — so your photos capture every side of the city. Between sessions, I'll take you to my favourite tapas spots, a flamenco tablao, or hidden corners that only locals know. Think of it as spending a day with someone who truly knows Madrid, shows you the real city, and captures every moment along the way. Perfect for couples who want to experience Madrid, not just pose in it.
           </p>
           <div class="package-list">
             <h4>Includes:</h4>
@@ -158,22 +164,22 @@ const packages = [
               ))}
             </ul>
           </div>
-          <p class="text-2xl text-terracotta mb-6" style="font-family: 'Chulapa', Georgia, serif;">€450</p>
-          <a href="/contact/" class="btn-simple">Enquire</a>
+          <p class="text-2xl text-terracotta mb-6" style="font-family: 'Chulapa', Georgia, serif;">From €700</p>
+          <a href="/contact/?package=castizo-experience" class="btn-simple">Enquire</a>
         </div>
       </div>
     </div>
   </section>
 
   <!-- What's Included -->
-  <section class="section bg-gray-50">
+  <section class="section">
     <div class="content-narrow text-block-centered">
       <p class="text-xs uppercase tracking-widest text-gray-400 mb-4">Every session includes</p>
       <h2>The Experience</h2>
       <p class="my-8">
-        From the moment we meet, I'll guide you through Madrid's most photogenic spots.
-        No awkward poses - just natural moments and genuine connection. Your photos will be
-        delivered within 7-10 days via a private online gallery.
+        From the moment we meet, we'll guide you through Madrid's most photogenic spots.
+        No awkward poses — just natural moments and genuine connection. Your photos will be
+        delivered within 7-10 days via a personal download link.
       </p>
     </div>
     <div class="content-wrapper">
@@ -198,14 +204,122 @@ const packages = [
     </div>
   </section>
 
-  <!-- CTA -->
+  <!-- Not a couple -->
+  <section class="section bg-gray-50">
+    <div class="content-narrow text-block-centered">
+      <p class="text-sm text-gray-500">
+        Not a couple? No problem. We also photograph families, solo travelers, and special occasions.
+        <a href="/contact/?type=other" class="text-terracotta hover:underline">Get in touch</a> and we'll create something perfect for you.
+      </p>
+      <p class="text-sm text-gray-400 mt-4 italic">
+        Custom packages available — tell us about your vision and we'll create the perfect experience for you.
+      </p>
+    </div>
+  </section>
+
+  <!-- Quick Inquiry Form -->
   <section class="section">
     <div class="content-narrow text-block-centered">
       <h2>Ready to Book?</h2>
       <p class="my-6">
-        Let's discuss your perfect Madrid photography experience
+        Send us a message and we'll get back to you within 24 hours to start planning
       </p>
-      <a href="/contact/" class="btn-simple">Contact Us</a>
+    </div>
+    <div class="content-narrow">
+      <form
+        action="https://api.web3forms.com/submit"
+        method="POST"
+        class="space-y-8 mt-8"
+      >
+        <!-- Web3Forms Config -->
+        <input type="hidden" name="access_key" value="53b428e4-1058-4e47-9dce-2afaa619e4b3" />
+        <input type="hidden" name="subject" value="Quick Inquiry - Madrid Amor Photography" />
+        <input type="hidden" name="from_name" value="Madrid Amor Website (Services)" />
+        <input type="hidden" name="redirect" value="https://madridamor.com/thank-you/" />
+        <input type="checkbox" name="botcheck" class="hidden" style="display: none;" />
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- Name -->
+          <div>
+            <label for="quick-name" class="block text-sm uppercase tracking-widest text-gray-500 mb-3">
+              Name <span class="text-terracotta">*</span>
+            </label>
+            <input
+              type="text"
+              id="quick-name"
+              name="name"
+              required
+              placeholder="Your name"
+              class="w-full py-3 border-0 border-b border-gray-300 focus:border-gray-800 focus:ring-0 bg-transparent text-gray-800 placeholder-gray-400"
+            />
+          </div>
+
+          <!-- Email -->
+          <div>
+            <label for="quick-email" class="block text-sm uppercase tracking-widest text-gray-500 mb-3">
+              Email <span class="text-terracotta">*</span>
+            </label>
+            <input
+              type="email"
+              id="quick-email"
+              name="email"
+              required
+              placeholder="you@example.com"
+              class="w-full py-3 border-0 border-b border-gray-300 focus:border-gray-800 focus:ring-0 bg-transparent text-gray-800 placeholder-gray-400"
+            />
+          </div>
+        </div>
+
+        <!-- Package -->
+        <div>
+          <label for="quick-package" class="block text-sm uppercase tracking-widest text-gray-500 mb-3">
+            Preferred Package
+          </label>
+          <select
+            id="quick-package"
+            name="package"
+            class="w-full py-3 border-0 border-b border-gray-300 focus:border-gray-800 focus:ring-0 bg-transparent text-gray-800 appearance-none cursor-pointer"
+          >
+            <option value="" disabled selected>Select a package</option>
+            <option value="quick-snap">Madrid Quick Snap</option>
+            <option value="madrid-classic">Madrid Classic</option>
+            <option value="castizo-experience">The Castizo Experience</option>
+            <option value="not-sure">Not sure yet</option>
+          </select>
+        </div>
+
+        <!-- Message -->
+        <div>
+          <label for="quick-message" class="block text-sm uppercase tracking-widest text-gray-500 mb-3">
+            Message <span class="text-terracotta">*</span>
+          </label>
+          <textarea
+            id="quick-message"
+            name="message"
+            required
+            rows="3"
+            placeholder="Tell us about your plans..."
+            class="w-full py-3 border-0 border-b border-gray-300 focus:border-gray-800 focus:ring-0 bg-transparent text-gray-800 placeholder-gray-400 resize-none"
+          ></textarea>
+        </div>
+
+        <!-- Submit -->
+        <div class="text-center pt-4">
+          <button type="submit" class="btn-simple">
+            Send Message
+          </button>
+        </div>
+      </form>
     </div>
   </section>
 </Layout>
+
+<style>
+  /* Custom select arrow for mini-form */
+  select {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%239ca3af' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+    background-position: right 0 center;
+    background-repeat: no-repeat;
+    background-size: 1.5em 1.5em;
+  }
+</style>

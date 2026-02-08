@@ -1,0 +1,37 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout
+  title="감사합니다"
+  description="문의해 주셔서 감사합니다. 24시간 이내에 답변 드리겠습니다."
+  lang="ko"
+  currentPage="contact"
+  alternateEn="/thank-you/"
+>
+  <section class="section" style="min-height: 60vh; display: flex; align-items: center;">
+    <div class="content-narrow text-block-centered">
+      <p class="text-xs uppercase tracking-widest text-gray-400 mb-4">메시지 전송 완료</p>
+      <h1>감사합니다!</h1>
+      <p class="mt-6">
+        메시지가 접수되었습니다! 24시간 이내에 답변 드리겠습니다. [ENSO]가 곧 연락드릴게요 :)
+      </p>
+      <p class="mt-8 text-sm text-gray-500">
+        더 빠른 응답을 원하시나요?
+      </p>
+      <div class="mt-6 flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="https://wa.me/821073833133?text=%EC%95%88%EB%85%95%ED%95%98%EC%84%B8%EC%9A%94!%20%EB%B0%A9%EA%B8%88%20%EC%9B%B9%EC%82%AC%EC%9D%B4%ED%8A%B8%EB%A1%9C%20%EB%AC%B8%EC%9D%98%EB%A5%BC%20%EB%B3%B4%EB%83%88%EC%8A%B5%EB%8B%88%EB%8B%A4."
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-simple"
+        >
+          WhatsApp으로 연락하기
+        </a>
+        <a href="/ko/gallery/" class="btn-simple" style="border-color: #d1d5db; color: #6b7280;">
+          갤러리 보기
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

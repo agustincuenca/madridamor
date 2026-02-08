@@ -4,7 +4,7 @@ import Layout from '../../layouts/Layout.astro';
 
 <Layout
   title="연락처"
-  description="마드리드 커플 스냅 촬영을 예약하세요. 마드리드의 명소에서 완벽한 촬영을 위해 아르투로에게 연락하세요. 빠른 응답을 보장합니다."
+  description="마드리드 커플 스냅 촬영을 예약하세요. 한국어 상담 가능합니다. 빠른 응답을 보장합니다."
   lang="ko"
   currentPage="contact"
   alternateEn="/contact/"
@@ -23,7 +23,7 @@ import Layout from '../../layouts/Layout.astro';
     <div class="content-narrow text-block-centered">
       <h1>연락하기</h1>
       <p class="mt-4">
-        마드리드에서 당신의 사랑 이야기를 담을 준비가 되셨나요? 계획을 시작해봐요.
+        마드리드에서 사랑 이야기를 담을 준비가 되셨나요? 메시지를 보내주세요 — 여러분의 계획을 듣고 싶어요.
       </p>
     </div>
   </section>
@@ -39,8 +39,11 @@ import Layout from '../../layouts/Layout.astro';
             method="POST"
             class="space-y-8"
           >
-            <!-- Web3Forms Access Key -->
+            <!-- Web3Forms Config -->
             <input type="hidden" name="access_key" value="53b428e4-1058-4e47-9dce-2afaa619e4b3" />
+            <input type="hidden" name="subject" value="New Inquiry - Madrid Amor Photography" />
+            <input type="hidden" name="from_name" value="Madrid Amor Website" />
+            <input type="hidden" name="redirect" value="https://madridamor.com/ko/thank-you/" />
             <input type="checkbox" name="botcheck" class="hidden" style="display: none;" />
 
             <!-- Name -->
@@ -73,33 +76,90 @@ import Layout from '../../layouts/Layout.astro';
               />
             </div>
 
-            <!-- Date -->
+            <!-- Session Type -->
             <div>
-              <label for="dates" class="block text-sm uppercase tracking-widest text-gray-500 mb-3">
-                희망 날짜
+              <label for="session_type" class="block text-sm uppercase tracking-widest text-gray-500 mb-3">
+                촬영 유형
               </label>
-              <input
-                type="date"
-                id="dates"
-                name="dates"
-                class="w-full py-3 border-0 border-b border-gray-300 focus:border-gray-800 focus:ring-0 bg-transparent text-gray-800"
-              />
+              <select
+                id="session_type"
+                name="session_type"
+                class="w-full py-3 border-0 border-b border-gray-300 focus:border-gray-800 focus:ring-0 bg-transparent text-gray-800 appearance-none cursor-pointer"
+              >
+                <option value="" disabled selected>촬영 유형을 선택하세요</option>
+                <option value="couple">커플 촬영</option>
+                <option value="pre-wedding">웨딩 전 촬영 / 약혼</option>
+                <option value="honeymoon">허니문</option>
+                <option value="proposal">프로포즈</option>
+                <option value="other">기타 / 아직 모르겠어요</option>
+              </select>
             </div>
 
             <!-- Package -->
             <div>
               <label for="package" class="block text-sm uppercase tracking-widest text-gray-500 mb-3">
-                패키지
+                희망 패키지
               </label>
               <select
                 id="package"
                 name="package"
                 class="w-full py-3 border-0 border-b border-gray-300 focus:border-gray-800 focus:ring-0 bg-transparent text-gray-800 appearance-none cursor-pointer"
               >
-                <option value="" disabled selected>패키지 선택</option>
-                <option value="golden-hour">골든 아워 - €180</option>
-                <option value="madrid-classic">마드리드 클래식 - €320</option>
-                <option value="full-experience">풀 익스피리언스 - €450</option>
+                <option value="" disabled selected>패키지를 선택하세요</option>
+                <option value="quick-snap">마드리드 퀵 스냅</option>
+                <option value="madrid-classic">마드리드 클래식</option>
+                <option value="castizo-experience">카스티소 익스피리언스</option>
+                <option value="not-sure">아직 모르겠어요</option>
+              </select>
+            </div>
+
+            <!-- Dates -->
+            <div>
+              <label for="dates" class="block text-sm uppercase tracking-widest text-gray-500 mb-3">
+                희망 날짜
+              </label>
+              <input
+                type="text"
+                id="dates"
+                name="dates"
+                placeholder="예: 2026년 3월 15-20일"
+                class="w-full py-3 border-0 border-b border-gray-300 focus:border-gray-800 focus:ring-0 bg-transparent text-gray-800 placeholder-gray-400"
+              />
+            </div>
+
+            <!-- Number of People -->
+            <div>
+              <label for="group_size" class="block text-sm uppercase tracking-widest text-gray-500 mb-3">
+                인원 수
+              </label>
+              <select
+                id="group_size"
+                name="group_size"
+                class="w-full py-3 border-0 border-b border-gray-300 focus:border-gray-800 focus:ring-0 bg-transparent text-gray-800 appearance-none cursor-pointer"
+              >
+                <option value="" disabled selected>선택하세요</option>
+                <option value="2">2명</option>
+                <option value="3-4">3-4명</option>
+                <option value="5+">5명 이상</option>
+              </select>
+            </div>
+
+            <!-- How did you find us -->
+            <div>
+              <label for="referral" class="block text-sm uppercase tracking-widest text-gray-500 mb-3">
+                어떻게 알게 되셨나요?
+              </label>
+              <select
+                id="referral"
+                name="referral"
+                class="w-full py-3 border-0 border-b border-gray-300 focus:border-gray-800 focus:ring-0 bg-transparent text-gray-800 appearance-none cursor-pointer"
+              >
+                <option value="" disabled selected>선택하세요</option>
+                <option value="instagram">인스타그램</option>
+                <option value="google">구글 검색</option>
+                <option value="recommendation">추천 / 입소문</option>
+                <option value="blog">웨딩 / 여행 블로그</option>
+                <option value="other">기타</option>
               </select>
             </div>
 
@@ -113,7 +173,7 @@ import Layout from '../../layouts/Layout.astro';
                 name="message"
                 required
                 rows="4"
-                placeholder="계획에 대해 알려주세요..."
+                placeholder="마드리드 여행에 대해 알려주세요 — 방문 시기, 기념하는 일, 촬영에 대한 아이디어 등!"
                 class="w-full py-3 border-0 border-b border-gray-300 focus:border-gray-800 focus:ring-0 bg-transparent text-gray-800 placeholder-gray-400 resize-none"
               ></textarea>
             </div>
@@ -141,10 +201,10 @@ import Layout from '../../layouts/Layout.astro';
             <!-- WhatsApp -->
             <div>
               <p class="text-sm uppercase tracking-widest text-gray-400 mb-2">WhatsApp</p>
-              <a href="https://wa.me/34600000000" class="text-gray-800 hover:text-terracotta transition-colors">
-                +34 600 000 000
+              <a href="https://wa.me/821073833133?text=%EC%95%88%EB%85%95%ED%95%98%EC%84%B8%EC%9A%94!%20%EB%A7%88%EB%93%9C%EB%A6%AC%EB%93%9C%EC%97%90%EC%84%9C%20%EC%B4%AC%EC%98%81%EC%97%90%20%EA%B4%80%EC%8B%AC%EC%9D%B4%20%EC%9E%88%EC%8A%B5%EB%8B%88%EB%8B%A4." class="text-gray-800 hover:text-terracotta transition-colors">
+                +82 10-7383-3133
               </a>
-              <p class="text-sm text-gray-400 mt-1">빠른 응답</p>
+              <p class="text-sm text-gray-400 mt-1">한국어 상담 가능 · 빠른 응답</p>
             </div>
 
             <!-- Location -->
@@ -164,7 +224,7 @@ import Layout from '../../layouts/Layout.astro';
             <div class="pt-6 border-t border-gray-200">
               <p class="text-sm uppercase tracking-widest text-gray-400 mb-4">팔로우</p>
               <a
-                href="https://instagram.com/arturo_madrid_weddings"
+                href="https://instagram.com/madrid.amor_"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="inline-flex items-center text-gray-600 hover:text-terracotta transition-colors"
@@ -172,7 +232,7 @@ import Layout from '../../layouts/Layout.astro';
                 <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
                 </svg>
-                @arturo_madrid_weddings
+                @madrid.amor_
               </a>
             </div>
           </div>
@@ -191,25 +251,40 @@ import Layout from '../../layouts/Layout.astro';
         <div>
           <p class="font-semibold mb-2">어떻게 예약하나요?</p>
           <p class="text-gray-500">
-            위의 양식을 작성하시거나 WhatsApp 메시지를 보내주세요. 24시간 이내에 비전과 날짜에 대해 상담해 드리겠습니다.
+            위의 양식을 작성하시거나 WhatsApp 메시지를 보내주세요. 24시간 이내에 비전과 완벽한 날짜에 대해 상담해 드리겠습니다.
           </p>
         </div>
         <div>
           <p class="font-semibold mb-2">결제 절차는 어떻게 되나요?</p>
           <p class="text-gray-500">
-            30% 예약금으로 날짜가 확정됩니다. 나머지 잔액은 촬영 당일에 결제하시면 됩니다. 계좌이체, PayPal, 현금 모두 가능합니다.
+            30% 예약금으로 날짜가 확정됩니다. 나머지 잔액은 촬영 당일에 결제하시면 됩니다. 계좌이체, PayPal, 현금 모두 가능합니다 — 편하신 방법으로 결제하세요.
           </p>
         </div>
         <div>
           <p class="font-semibold mb-2">무엇을 입어야 하나요?</p>
           <p class="text-gray-500">
-            예약 후 스타일 가이드를 보내드립니다. 일반적으로 단색과 코디네이션된 의상이 가장 잘 어울립니다. 큰 로고는 피해주세요.
+            예약 후 마드리드의 빛에 아름답게 어울리는 의상 아이디어가 담긴 스타일 가이드를 보내드립니다. 단색과 코디네이션된 의상이 가장 잘 어울립니다. 큰 로고는 피해주세요.
           </p>
         </div>
       </div>
     </div>
   </section>
 </Layout>
+
+<script>
+  // Pre-fill form from URL parameters (when coming from services page)
+  const params = new URLSearchParams(window.location.search);
+  const pkg = params.get('package');
+  if (pkg) {
+    const select = document.getElementById('package');
+    if (select) (select as HTMLSelectElement).value = pkg;
+  }
+  const type = params.get('type');
+  if (type) {
+    const select = document.getElementById('session_type');
+    if (select) (select as HTMLSelectElement).value = type;
+  }
+</script>
 
 <style>
   /* Custom select arrow */
