@@ -1,0 +1,37 @@
+---
+import Layout from '../../layouts/Layout.astro';
+const base = import.meta.env.BASE_URL;
+---
+
+<Layout
+  title="Thank You"
+  description="Got your message! We're already excited. Expect to hear from us within 24 hours."
+  lang="castizo"
+  currentPage="contact"
+>
+  <section class="section" style="min-height: 60vh; display: flex; align-items: center;">
+    <div class="content-narrow text-block-centered">
+      <p class="text-xs uppercase tracking-widest text-gray-400 mb-4">Message Sent</p>
+      <h1>Got It!</h1>
+      <p class="mt-6">
+        We're already excited. Expect to hear from us within 24 hours — probably sooner, because we genuinely love talking about Madrid and planning cool stuff.
+      </p>
+      <p class="mt-8 text-sm text-gray-500">
+        Can't wait? Neither can we.
+      </p>
+      <div class="mt-6 flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="https://wa.me/821073833133?text=Hey!%20I%20just%20sent%20an%20inquiry%20through%20the%20website."
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-simple"
+        >
+          WhatsApp Us
+        </a>
+        <a href={`${base}castizo/gallery/`} class="btn-simple" style="border-color: #d1d5db; color: #6b7280;">
+          Browse the Gallery
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

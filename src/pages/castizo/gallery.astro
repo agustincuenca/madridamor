@@ -1,0 +1,57 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const base = import.meta.env.BASE_URL;
+const images = [
+  { src: `${base}images/gallery/madrid-couple-portrait-intimate-closeup.jpg`, alt: 'Intimate couple portrait photography in Madrid - romantic close-up' },
+  { src: `${base}images/gallery/madrid-couple-photography-tender-moment.jpg`, alt: 'Couple photography in Madrid - tender moment with traditional architecture' },
+  { src: `${base}images/gallery/madrid-couple-photography-passionate-kiss.jpg`, alt: 'Couple photography in Madrid - passionate kiss at golden hour' },
+  { src: `${base}images/gallery/madrid-couple-photography-sunset-field.jpg`, alt: 'Couple photography in Madrid - embracing in a field at sunset' },
+  { src: `${base}images/gallery/madrid-wedding-bride-portrait-sunset.jpg`, alt: 'Madrid wedding photography - bride portrait with floral headpiece at sunset' },
+  { src: `${base}images/gallery/madrid-couple-photography-laughing-stone-street.jpg`, alt: 'Couple photography in Madrid - laughing together in a stone-walled street' },
+  { src: `${base}images/gallery/madrid-wedding-photography-nature-bridge.jpg`, alt: 'Wedding photography in Madrid - couple on a wooden bridge surrounded by nature' },
+  { src: `${base}images/gallery/madrid-couple-photography-walking-avenue.jpg`, alt: 'Madrid couple photography - walking together through a city avenue' },
+  { src: `${base}images/gallery/madrid-couple-photography-golden-hour-kiss.jpg`, alt: 'Golden hour couple photography in Madrid - about to kiss at sunset' },
+  { src: `${base}images/gallery/madrid-couple-photography-romantic-sunset.jpg`, alt: 'Romantic couple photography in Madrid - intimate moment at sunset' },
+  { src: `${base}images/gallery/madrid-wedding-photography-golden-silhouettes.jpg`, alt: 'Madrid wedding photography - silhouettes bathed in golden light' },
+  { src: `${base}images/gallery/madrid-couple-photography-magical-light.jpg`, alt: 'Madrid couple photography - magical sun flare between lovers' },
+  { src: `${base}images/gallery/madrid-couple-photography-outdoor-embrace.jpg`, alt: 'Outdoor couple photography in Madrid - embracing at golden hour' },
+  { src: `${base}images/gallery/madrid-wedding-photography-playful-hug.jpg`, alt: 'Madrid wedding photography - playful hug in a tree-lined path' },
+  { src: `${base}images/gallery/madrid-wedding-photography-sunset-kiss.jpg`, alt: 'Wedding photography in Madrid - couple about to kiss at sunset' },
+];
+---
+
+<Layout
+  title="Gallery"
+  description="Real couples, real moments, real Madrid. Browse our portfolio and see what a day with us actually looks like."
+  lang="castizo"
+  currentPage="gallery"
+>
+  <!-- Masonry Gallery -->
+  <section class="py-4">
+    <div class="masonry-grid">
+      {images.map((image, index) => (
+        <a href={image.src} class="masonry-item glightbox" data-gallery="gallery">
+          <img
+            src={image.src}
+            alt={image.alt}
+            loading={index < 6 ? 'eager' : 'lazy'}
+          />
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section bg-white">
+    <div class="content-narrow text-block-centered">
+      <p class="text-xs uppercase tracking-widest text-gray-400 mb-4">
+        Like what you see?
+      </p>
+      <h2>This could be you. Seriously.</h2>
+      <a href={`${base}castizo/contact/`} class="btn-simple mt-8">
+        Let's Make It Happen
+      </a>
+    </div>
+  </section>
+</Layout>

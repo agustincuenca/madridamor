@@ -5,6 +5,7 @@ interface Props {
 
 const { lang = 'en' } = Astro.props;
 const isKorean = lang === 'ko';
+const isCastizo = lang === 'castizo';
 const currentYear = new Date().getFullYear();
 const base = import.meta.env.BASE_URL;
 ---
@@ -15,6 +16,8 @@ const base = import.meta.env.BASE_URL;
     <p class="text-sm text-gray-500 tracking-wide mb-8">
       {isKorean
         ? '마드리드에서 당신의 사랑 이야기를 담다'
+        : isCastizo
+        ? 'Making friends, taking photos, eating tapas'
         : 'Capturing love stories in Madrid'}
     </p>
 
@@ -36,10 +39,10 @@ const base = import.meta.env.BASE_URL;
     <!-- Navigation -->
     <nav class="mb-10">
       <ul class="flex flex-wrap justify-center gap-8 text-xs tracking-[0.15em] uppercase text-gray-500">
-        <li><a href={isKorean ? `${base}ko/gallery/` : `${base}gallery/`} class="hover:text-gray-800 transition-colors">{isKorean ? '갤러리' : 'Gallery'}</a></li>
-        <li><a href={isKorean ? `${base}ko/services/` : `${base}services/`} class="hover:text-gray-800 transition-colors">{isKorean ? '서비스' : 'Services'}</a></li>
-        <li><a href={isKorean ? `${base}ko/about/` : `${base}about/`} class="hover:text-gray-800 transition-colors">{isKorean ? '소개' : 'About'}</a></li>
-        <li><a href={isKorean ? `${base}ko/contact/` : `${base}contact/`} class="hover:text-gray-800 transition-colors">{isKorean ? '연락처' : 'Contact'}</a></li>
+        <li><a href={isKorean ? `${base}ko/gallery/` : isCastizo ? `${base}castizo/gallery/` : `${base}gallery/`} class="hover:text-gray-800 transition-colors">{isKorean ? '갤러리' : 'Gallery'}</a></li>
+        <li><a href={isKorean ? `${base}ko/services/` : isCastizo ? `${base}castizo/services/` : `${base}services/`} class="hover:text-gray-800 transition-colors">{isKorean ? '서비스' : 'Services'}</a></li>
+        <li><a href={isKorean ? `${base}ko/about/` : isCastizo ? `${base}castizo/about/` : `${base}about/`} class="hover:text-gray-800 transition-colors">{isKorean ? '소개' : 'About'}</a></li>
+        <li><a href={isKorean ? `${base}ko/contact/` : isCastizo ? `${base}castizo/contact/` : `${base}contact/`} class="hover:text-gray-800 transition-colors">{isKorean ? '연락처' : 'Contact'}</a></li>
       </ul>
     </nav>
 

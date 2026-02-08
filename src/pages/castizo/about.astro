@@ -1,0 +1,110 @@
+---
+import Layout from '../../layouts/Layout.astro';
+const base = import.meta.env.BASE_URL;
+---
+
+<Layout
+  title="About"
+  description="Meet Arturo — a Madrid photographer who lived in Seoul, studied at Korea University, and wants to show you his city. Not a service, just a friend with a camera."
+  lang="castizo"
+  currentPage="about"
+>
+  <!-- Hero Image -->
+  <section class="py-2">
+    <img
+      src={`${base}images/arturo-photographer.jpg`}
+      alt="Arturo - Madrid Amor Photographer"
+      class="w-full h-[70vh] object-cover"
+    />
+  </section>
+
+  <!-- About Text -->
+  <section class="section">
+    <div class="content-narrow text-block-centered">
+      <p class="text-xs uppercase tracking-widest text-gray-400 mb-4">The People</p>
+      <h1>Meet Arturo & [ENSO]</h1>
+
+      <p class="mt-8">
+        Hey! I'm Arturo. I'm a photographer, but that's only half the story. I lived in Seoul for two years, went to Korea University (고려대학교), worked at the Spanish Embassy... Long story short: I fell in love with Korean culture, came back to Madrid, and figured — why not bring both worlds together?
+      </p>
+
+      <p>
+        That's where [ENSO] comes in. [ENSO_ROL_DESCRIPCION]. [ENSO_BACKGROUND].
+        When you message us, [ENSO]'s the one who'll answer — she makes sure everything feels easy and comfortable from day one. Think of her as the person who makes sure nothing falls through the cracks.
+      </p>
+
+      <p>
+        Together, we're a pretty good team. I know Madrid like the back of my hand — every hidden terrace, every perfect sunset spot, every shortcut through the old town. [ENSO] brings [ENSO_CUALIDADES]. And honestly? We just really enjoy meeting new people and showing them why we love this city.
+      </p>
+
+      <p>
+        When we're not doing photoshoots, you'll find us hunting down the best croquetas in the city, arguing about which neighbourhood has the best terrazas, or discovering yet another rooftop bar. These are the places we love sharing with the people we photograph — because the best photos happen in the best places.
+      </p>
+
+      <!-- Instagram -->
+      <div class="mt-12 pt-8 border-t border-gray-200">
+        <a
+          href="https://instagram.com/arturo_madrid_weddings"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center text-sm uppercase tracking-widest text-gray-600 hover:text-terracotta transition-colors"
+        >
+          <svg class="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+          </svg>
+          @arturo_madrid_weddings
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Madrid Section -->
+  <section class="py-2">
+    <div class="grid grid-cols-3 gap-2">
+      <img src={`${base}images/gallery/photo-7.jpg`} alt="Madrid street photography" class="w-full aspect-square object-cover" />
+      <img src={`${base}images/gallery/photo-8.jpg`} alt="Madrid golden hour" class="w-full aspect-square object-cover" />
+      <img src={`${base}images/gallery/photo-9.jpg`} alt="Madrid romantic location" class="w-full aspect-square object-cover" />
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="content-narrow text-block-centered">
+      <p class="text-xs uppercase tracking-widest text-gray-400 mb-4">The City</p>
+      <h2>Why Madrid?</h2>
+
+      <p class="mt-8">
+        300 days of sunshine a year. Golden light that makes everything look like a movie. Incredible food around every corner. And a city where you can have the best meal of your life for €15. That's why Madrid.
+      </p>
+
+      <p>
+        From the grandeur of the Royal Palace to the cool streets of Malasaña, from lazy afternoons in Retiro Park to those insane sunsets at Temple of Debod — Madrid has an incredible range of backdrops for your photos. And because I've lived here my whole life (minus those two years in Seoul), I know exactly where to take you and when. The secret spots, the crowd-free hours, the angles that make everything look incredible. That's the advantage of hanging out with a local.
+      </p>
+    </div>
+  </section>
+
+  <!-- Testimonial -->
+  <section class="section bg-gray-50">
+    <div class="content-narrow text-block-centered">
+      <p class="text-xs uppercase tracking-widest text-gray-400 mb-8">What People Say</p>
+      <blockquote class="text-xl md:text-2xl text-gray-700 leading-relaxed mb-8" style="font-family: 'Chulapa', Georgia, serif;">
+        "From the first WhatsApp message to the final gallery, everything was so easy. Arturo knew
+        exactly where to take us and [ENSO] helped us plan every detail. It felt like having friends
+        in Madrid."
+      </blockquote>
+      <p class="text-sm text-gray-500">
+        Sarah & Michael, Honeymoon 2024
+      </p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section">
+    <div class="content-narrow text-block-centered">
+      <h2>Let's Make It Happen</h2>
+      <p class="my-6">
+        Tell us about your trip. We'd genuinely love to hear what you've got planned — and help make it even better.
+      </p>
+      <a href={`${base}castizo/contact/`} class="btn-simple">Say Hello</a>
+    </div>
+  </section>
+</Layout>
