@@ -1,0 +1,174 @@
+---
+interface Props {
+  lang?: string;
+  currentPage?: string;
+}
+
+const { lang = 'en', currentPage = '' } = Astro.props;
+const isKorean = lang === 'ko';
+
+const navLinks = isKorean ? [
+  { href: '/ko/', label: '홈', id: 'home', svg: '/images/nav/ma home.svg' },
+  { href: '/ko/gallery/', label: '갤러리', id: 'gallery', svg: '/images/nav/ma gallery.svg' },
+  { href: '/ko/services/', label: '서비스', id: 'services', svg: '/images/nav/ma services.svg' },
+  { href: '/ko/about/', label: '소개', id: 'about', svg: '/images/nav/ma about.svg' },
+  { href: '/ko/contact/', label: '연락처', id: 'contact', svg: '/images/nav/ma contact.svg' },
+] : [
+  { href: '/', label: 'Home', id: 'home', svg: '/images/nav/ma home.svg' },
+  { href: '/gallery/', label: 'Gallery', id: 'gallery', svg: '/images/nav/ma gallery.svg' },
+  { href: '/services/', label: 'Services', id: 'services', svg: '/images/nav/ma services.svg' },
+  { href: '/about/', label: 'About', id: 'about', svg: '/images/nav/ma about.svg' },
+  { href: '/contact/', label: 'Contact', id: 'contact', svg: '/images/nav/ma contact.svg' },
+];
+---
+
+<!-- Full header (visible at top) -->
+<header id="header-full" class="bg-white py-8 sticky top-0 z-50 transition-opacity duration-300">
+  <div class="text-center">
+    <!-- Logo -->
+    <a href={isKorean ? '/ko/' : '/'} class="inline-block mb-2">
+      <img
+        src="/images/logo.svg"
+        alt="Madrid Amor"
+        class="h-16 md:h-20 w-auto mx-auto"
+      />
+    </a>
+
+    <!-- Tagline -->
+    <p class="text-sm text-gray-500 mb-6 tracking-wide">
+      {isKorean
+        ? '마드리드에서 당신의 순간을 담다 · 당신의 이야기를 만들다'
+        : 'Madrid in a Frame · Capturing Your Moments, Crafting Your Story'}
+    </p>
+
+    <!-- Desktop Navigation -->
+    <nav class="hidden md:block">
+      <ul class="flex justify-center items-center gap-8">
+        {navLinks.map(link => (
+          <li>
+            <a
+              href={link.href}
+              class={`nav-link-svg ${currentPage === link.id ? 'active' : ''}`}
+            >
+              <img src={link.svg} alt={link.label} class="h-9 nav-svg" />
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+
+    <!-- Mobile Menu Button -->
+    <button
+      id="mobile-menu-btn"
+      class="md:hidden p-2 text-gray-600"
+      aria-label="Menu"
+    >
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+    </button>
+
+    <!-- Mobile Menu -->
+    <nav id="mobile-menu" class="hidden md:hidden mt-4">
+      <ul class="space-y-4">
+        {navLinks.map(link => (
+          <li>
+            <a
+              href={link.href}
+              class={`nav-link-svg inline-block ${currentPage === link.id ? 'active' : ''}`}
+            >
+              <img src={link.svg} alt={link.label} class="h-6 nav-svg" />
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- Compact header (appears on scroll) -->
+<header id="header-compact" class="bg-white py-3 px-6 fixed top-0 left-0 right-0 z-[60] shadow-sm opacity-0 pointer-events-none transition-opacity duration-300">
+  <div class="max-w-6xl mx-auto flex items-center justify-between">
+    <!-- Logo left -->
+    <a href={isKorean ? '/ko/' : '/'} class="shrink-0">
+      <img
+        src="/images/logo.svg"
+        alt="Madrid Amor"
+        class="h-10 w-auto"
+      />
+    </a>
+
+    <!-- Desktop Nav right -->
+    <nav class="hidden md:block">
+      <ul class="flex items-center gap-6">
+        {navLinks.map(link => (
+          <li>
+            <a
+              href={link.href}
+              class={`nav-link-svg ${currentPage === link.id ? 'active' : ''}`}
+            >
+              <img src={link.svg} alt={link.label} class="h-6 nav-svg" />
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+
+    <!-- Mobile Menu Button -->
+    <button
+      id="mobile-menu-btn-compact"
+      class="md:hidden p-2 text-gray-600"
+      aria-label="Menu"
+    >
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Mobile Menu (compact) -->
+  <nav id="mobile-menu-compact" class="hidden md:hidden mt-3">
+    <ul class="space-y-3 text-center">
+      {navLinks.map(link => (
+        <li>
+          <a
+            href={link.href}
+            class={`nav-link-svg inline-block ${currentPage === link.id ? 'active' : ''}`}
+          >
+            <img src={link.svg} alt={link.label} class="h-5 nav-svg" />
+          </a>
+        </li>
+      ))}
+    </ul>
+  </nav>
+</header>
+
+<script>
+  const headerFull = document.getElementById('header-full');
+  const headerCompact = document.getElementById('header-compact');
+  const scrollThreshold = 80;
+
+  function updateHeader() {
+    if (window.scrollY > scrollThreshold) {
+      headerFull?.classList.add('opacity-0');
+      headerCompact?.classList.remove('opacity-0', 'pointer-events-none');
+      headerCompact?.classList.add('opacity-100');
+    } else {
+      headerFull?.classList.remove('opacity-0');
+      headerCompact?.classList.add('opacity-0', 'pointer-events-none');
+      headerCompact?.classList.remove('opacity-100');
+    }
+  }
+
+  window.addEventListener('scroll', updateHeader, { passive: true });
+  updateHeader();
+
+  // Mobile menu toggles
+  const btn1 = document.getElementById('mobile-menu-btn');
+  const menu1 = document.getElementById('mobile-menu');
+  btn1?.addEventListener('click', () => menu1?.classList.toggle('hidden'));
+
+  const btn2 = document.getElementById('mobile-menu-btn-compact');
+  const menu2 = document.getElementById('mobile-menu-compact');
+  btn2?.addEventListener('click', () => menu2?.classList.toggle('hidden'));
+</script>

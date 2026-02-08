@@ -1,0 +1,105 @@
+---
+interface Props {
+  images?: string[];
+  title?: string;
+  subtitle?: string;
+  ctaText?: string;
+  ctaLink?: string;
+  showCta?: boolean;
+}
+
+const {
+  images = ['/images/gallery/photo-1.jpg', '/images/gallery/photo-2.jpg', '/images/gallery/photo-3.jpg'],
+  title,
+  subtitle,
+  ctaText = 'Book Your Session',
+  ctaLink = '/contact/',
+  showCta = true
+} = Astro.props;
+---
+
+<section class="relative h-[85vh] md:h-[90vh] overflow-hidden">
+  <!-- Image slider -->
+  <div class="absolute inset-0">
+    {images.map((img, index) => (
+      <div
+        class={`hero-slide absolute inset-0 ${index === 0 ? 'active' : ''}`}
+        data-index={index}
+      >
+        <img
+          src={img}
+          alt="Madrid Amor Photography"
+          class="w-full h-full object-cover"
+        />
+      </div>
+    ))}
+    <!-- Subtle overlay -->
+    <div class="absolute inset-0 bg-black/30"></div>
+  </div>
+
+  <!-- Content overlay -->
+  {(title || subtitle || showCta) && (
+    <div class="absolute inset-0 flex items-center justify-center">
+      <div class="text-center text-white px-6 max-w-3xl">
+        {title && (
+          <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold tracking-wider mb-6" style="font-family: 'Chulapa', Georgia, serif;">
+            {title}
+          </h1>
+        )}
+        {subtitle && (
+          <p class="text-sm md:text-base tracking-[0.2em] uppercase mb-10 opacity-90">
+            {subtitle}
+          </p>
+        )}
+        {showCta && (
+          <a href={ctaLink} class="inline-block px-10 py-4 border border-white text-white text-xs tracking-[0.2em] uppercase hover:bg-white hover:text-black transition-all duration-300">
+            {ctaText}
+          </a>
+        )}
+      </div>
+    </div>
+  )}
+
+  <!-- Slide indicators -->
+  {images.length > 1 && (
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-3">
+      {images.map((_, index) => (
+        <button
+          class={`slide-dot w-2 h-2 rounded-full transition-all ${index === 0 ? 'bg-white' : 'bg-white/50'}`}
+          data-index={index}
+          aria-label={`Go to slide ${index + 1}`}
+        />
+      ))}
+    </div>
+  )}
+</section>
+
+<script>
+  const slides = document.querySelectorAll('.hero-slide');
+  const dots = document.querySelectorAll('.slide-dot');
+  let currentSlide = 0;
+
+  function showSlide(index: number) {
+    slides.forEach((slide, i) => {
+      slide.classList.toggle('active', i === index);
+    });
+    dots.forEach((dot, i) => {
+      dot.classList.toggle('bg-white', i === index);
+      dot.classList.toggle('bg-white/50', i !== index);
+    });
+    currentSlide = index;
+  }
+
+  // Auto-advance slides
+  if (slides.length > 1) {
+    setInterval(() => {
+      const next = (currentSlide + 1) % slides.length;
+      showSlide(next);
+    }, 5000);
+  }
+
+  // Click on dots
+  dots.forEach((dot, index) => {
+    dot.addEventListener('click', () => showSlide(index));
+  });
+</script>

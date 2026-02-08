@@ -1,0 +1,32 @@
+---
+interface ImageItem {
+  src: string;
+  alt: string;
+}
+
+interface Props {
+  images: ImageItem[];
+}
+
+const { images } = Astro.props;
+---
+
+<div class="grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
+  {images.map((image, index) => (
+    <a
+      href={image.src}
+      class="glightbox gallery-item block overflow-hidden"
+      data-gallery="gallery"
+    >
+      <div class="aspect-[4/5] relative">
+        <img
+          src={image.src}
+          alt={image.alt}
+          loading={index < 6 ? "eager" : "lazy"}
+          decoding="async"
+          class="absolute inset-0 w-full h-full object-cover"
+        />
+      </div>
+    </a>
+  ))}
+</div>

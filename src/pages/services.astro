@@ -1,0 +1,202 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const packages = [
+  {
+    name: 'Golden Hour',
+    duration: '1 hour',
+    photos: '30+ edited photos',
+    price: '180',
+    features: [
+      'Professional editing',
+      'Private online gallery',
+      'High-resolution downloads',
+      'One iconic location',
+    ],
+  },
+  {
+    name: 'Madrid Classic',
+    duration: '2 hours',
+    photos: '60+ edited photos',
+    price: '320',
+    features: [
+      'Professional editing',
+      'Private online gallery',
+      'High-resolution downloads',
+      'Multiple locations',
+      'Outfit change',
+    ],
+    featured: true,
+  },
+  {
+    name: 'Full Experience',
+    duration: '3 hours',
+    photos: '100+ edited photos',
+    price: '450',
+    features: [
+      'Professional editing',
+      'Private online gallery',
+      'High-resolution downloads',
+      'Multiple locations',
+      'Outfit changes',
+      'Sunset session included',
+    ],
+  },
+];
+---
+
+<Layout
+  title="Services & Pricing"
+  description="Professional couple photography packages in Madrid starting at 180 euros. Choose from Golden Hour, Madrid Classic, or Full Experience sessions."
+  currentPage="services"
+  alternateKo="/ko/services/"
+>
+  <!-- Hero Title -->
+  <section class="section">
+    <div class="content-narrow text-block-centered">
+      <h1>Services</h1>
+      <p class="mt-4">
+        Capturing your love story in Madrid's most beautiful locations
+      </p>
+    </div>
+  </section>
+
+  <!-- Photo Grid -->
+  <section class="py-2">
+    <div class="grid grid-cols-3 gap-2">
+      <img src="/images/gallery/photo-1.jpg" alt="Madrid couple photography" class="w-full aspect-square object-cover" />
+      <img src="/images/gallery/photo-2.jpg" alt="Romantic photoshoot Madrid" class="w-full aspect-square object-cover" />
+      <img src="/images/gallery/photo-3.jpg" alt="Love story Madrid" class="w-full aspect-square object-cover" />
+    </div>
+  </section>
+
+  <!-- Service Section 1: Golden Hour -->
+  <section class="section">
+    <div class="content-wrapper">
+      <div class="service-section">
+        <div class="service-image">
+          <img src="/images/gallery/photo-4.jpg" alt="Golden Hour Session" class="w-full aspect-[4/5] object-cover" />
+        </div>
+        <div class="service-content">
+          <p class="text-xs uppercase tracking-widest text-gray-400 mb-4">Starting at €180</p>
+          <h2>Golden Hour</h2>
+          <p class="my-6">
+            Perfect for couples who want to capture the magic of Madrid's famous golden light.
+            A 1-hour session at one iconic location, delivering 30+ professionally edited photos.
+          </p>
+          <div class="package-list">
+            <h4>Includes:</h4>
+            <ul>
+              {packages[0].features.map((feature) => (
+                <li>{feature}</li>
+              ))}
+            </ul>
+          </div>
+          <a href="/contact/" class="btn-simple">Enquire</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Section 2: Madrid Classic -->
+  <section class="section bg-gray-50">
+    <div class="content-wrapper">
+      <div class="service-section">
+        <div class="service-image">
+          <img src="/images/gallery/photo-5.jpg" alt="Madrid Classic Session" class="w-full aspect-[4/5] object-cover" />
+        </div>
+        <div class="service-content">
+          <p class="text-xs uppercase tracking-widest text-terracotta mb-4">Most Popular</p>
+          <h2>Madrid Classic</h2>
+          <p class="my-6">
+            Our signature experience. Explore multiple iconic Madrid locations over 2 hours,
+            with time for an outfit change. You'll receive 60+ beautifully edited photos.
+          </p>
+          <div class="package-list">
+            <h4>Includes:</h4>
+            <ul>
+              {packages[1].features.map((feature) => (
+                <li>{feature}</li>
+              ))}
+            </ul>
+          </div>
+          <p class="text-2xl text-terracotta mb-6" style="font-family: 'Chulapa', Georgia, serif;">€320</p>
+          <a href="/contact/" class="btn-simple">Enquire</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Section 3: Full Experience -->
+  <section class="section">
+    <div class="content-wrapper">
+      <div class="service-section">
+        <div class="service-image">
+          <img src="/images/gallery/photo-6.jpg" alt="Full Experience Session" class="w-full aspect-[4/5] object-cover" />
+        </div>
+        <div class="service-content">
+          <p class="text-xs uppercase tracking-widest text-gray-400 mb-4">Premium Package</p>
+          <h2>Full Experience</h2>
+          <p class="my-6">
+            The ultimate Madrid photography experience. 3 hours exploring the city's most romantic spots,
+            including a sunset session. Over 100 professionally edited photos to treasure forever.
+          </p>
+          <div class="package-list">
+            <h4>Includes:</h4>
+            <ul>
+              {packages[2].features.map((feature) => (
+                <li>{feature}</li>
+              ))}
+            </ul>
+          </div>
+          <p class="text-2xl text-terracotta mb-6" style="font-family: 'Chulapa', Georgia, serif;">€450</p>
+          <a href="/contact/" class="btn-simple">Enquire</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What's Included -->
+  <section class="section bg-gray-50">
+    <div class="content-narrow text-block-centered">
+      <p class="text-xs uppercase tracking-widest text-gray-400 mb-4">Every session includes</p>
+      <h2>The Experience</h2>
+      <p class="my-8">
+        From the moment we meet, I'll guide you through Madrid's most photogenic spots.
+        No awkward poses - just natural moments and genuine connection. Your photos will be
+        delivered within 7-10 days via a private online gallery.
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center mt-12">
+        <div>
+          <p class="text-sm font-semibold mb-2">Equipment</p>
+          <p class="text-sm text-gray-500">Professional cameras & lenses</p>
+        </div>
+        <div>
+          <p class="text-sm font-semibold mb-2">Editing</p>
+          <p class="text-sm text-gray-500">Carefully retouched photos</p>
+        </div>
+        <div>
+          <p class="text-sm font-semibold mb-2">Local Guide</p>
+          <p class="text-sm text-gray-500">Best spots at perfect timing</p>
+        </div>
+        <div>
+          <p class="text-sm font-semibold mb-2">Delivery</p>
+          <p class="text-sm text-gray-500">7-10 business days</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section">
+    <div class="content-narrow text-block-centered">
+      <h2>Ready to Book?</h2>
+      <p class="my-6">
+        Let's discuss your perfect Madrid photography experience
+      </p>
+      <a href="/contact/" class="btn-simple">Contact Us</a>
+    </div>
+  </section>
+</Layout>

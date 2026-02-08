@@ -1,0 +1,112 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="About"
+  description="Meet Arturo, the passionate photographer behind Madrid Amor. With over 10 years of experience, Arturo captures authentic love stories at Madrid's most beautiful locations."
+  currentPage="about"
+  alternateKo="/ko/about/"
+>
+  <!-- Hero Image -->
+  <section class="py-2">
+    <img
+      src="/images/arturo-photographer.jpg"
+      alt="Arturo - Madrid Amor Photographer"
+      class="w-full h-[70vh] object-cover"
+    />
+  </section>
+
+  <!-- About Text -->
+  <section class="section">
+    <div class="content-narrow text-block-centered">
+      <p class="text-xs uppercase tracking-widest text-gray-400 mb-4">The Photographer</p>
+      <h1>Meet Arturo</h1>
+
+      <p class="mt-8">
+        Hello! I'm Arturo, a Madrid-based photographer with a deep passion for capturing love stories.
+        For over a decade, I've had the privilege of photographing couples from all around the world
+        as they explore and fall in love with my beautiful city.
+      </p>
+
+      <p>
+        Photography, for me, is more than just taking pictures. It's about capturing genuine emotions,
+        stolen glances, and those spontaneous moments of joy that make your relationship unique.
+      </p>
+
+      <p>
+        When I'm not behind the camera, you'll find me exploring Madrid's hidden gems - from secret
+        rooftop terraces to quiet corners of the city that most tourists never discover. These are
+        the places I love to share with the couples I photograph.
+      </p>
+
+      <!-- Instagram -->
+      <div class="mt-12 pt-8 border-t border-gray-200">
+        <a
+          href="https://instagram.com/arturo_madrid_weddings"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center text-sm uppercase tracking-widest text-gray-600 hover:text-terracotta transition-colors"
+        >
+          <svg class="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+          </svg>
+          @arturo_madrid_weddings
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Madrid Section -->
+  <section class="py-2">
+    <div class="grid grid-cols-3 gap-2">
+      <img src="/images/gallery/photo-7.jpg" alt="Madrid street photography" class="w-full aspect-square object-cover" />
+      <img src="/images/gallery/photo-8.jpg" alt="Madrid golden hour" class="w-full aspect-square object-cover" />
+      <img src="/images/gallery/photo-9.jpg" alt="Madrid romantic location" class="w-full aspect-square object-cover" />
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="content-narrow text-block-centered">
+      <p class="text-xs uppercase tracking-widest text-gray-400 mb-4">The Location</p>
+      <h2>Why Madrid?</h2>
+
+      <p class="mt-8">
+        Madrid isn't just Spain's capital - it's a city that breathes romance. With over 300 days
+        of sunshine per year, the famous Spanish light creates a warm, golden glow that photographers
+        dream of.
+      </p>
+
+      <p>
+        From the grandeur of the Royal Palace to the charming streets of Malasaña, from the tranquil
+        gardens of Retiro Park to the dramatic sunset views at Temple of Debod - Madrid offers an
+        incredible diversity of backdrops for your love story.
+      </p>
+    </div>
+  </section>
+
+  <!-- Testimonial -->
+  <section class="section bg-gray-50">
+    <div class="content-narrow text-block-centered">
+      <p class="text-xs uppercase tracking-widest text-gray-400 mb-8">Kind Words</p>
+      <blockquote class="text-xl md:text-2xl text-gray-700 leading-relaxed mb-8" style="font-family: 'Chulapa', Georgia, serif;">
+        "Arturo made us feel so comfortable from the first moment. He knew exactly where to take us
+        and when to capture those perfect golden hour shots. Our photos are absolutely stunning."
+      </blockquote>
+      <p class="text-sm text-gray-500">
+        Sarah & Michael, Honeymoon 2024
+      </p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section">
+    <div class="content-narrow text-block-centered">
+      <h2>Let's Create Something Beautiful</h2>
+      <p class="my-6">
+        I'd love to hear about your plans and help capture your Madrid love story
+      </p>
+      <a href="/contact/" class="btn-simple">Get in Touch</a>
+    </div>
+  </section>
+</Layout>

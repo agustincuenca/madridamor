@@ -1,0 +1,221 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Contact"
+  description="Book your couple photography session in Madrid. Contact Arturo to discuss your perfect photoshoot at iconic Madrid locations. Quick response guaranteed."
+  currentPage="contact"
+  alternateKo="/ko/contact/"
+>
+  <!-- Hero Image -->
+  <section class="py-2">
+    <img
+      src="/images/gallery/photo-10.jpg"
+      alt="Madrid couple photography"
+      class="w-full h-[50vh] object-cover"
+    />
+  </section>
+
+  <!-- Title -->
+  <section class="section">
+    <div class="content-narrow text-block-centered">
+      <h1>Get in Touch</h1>
+      <p class="mt-4">
+        Ready to capture your love story in Madrid? Let's start planning.
+      </p>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="section bg-gray-50">
+    <div class="content-wrapper">
+      <div class="grid grid-cols-1 lg:grid-cols-5 gap-16">
+        <!-- Contact Form -->
+        <div class="lg:col-span-3">
+          <form
+            action="https://api.web3forms.com/submit"
+            method="POST"
+            class="space-y-8"
+          >
+            <!-- Web3Forms Access Key -->
+            <input type="hidden" name="access_key" value="53b428e4-1058-4e47-9dce-2afaa619e4b3" />
+            <input type="checkbox" name="botcheck" class="hidden" style="display: none;" />
+
+            <!-- Name -->
+            <div>
+              <label for="name" class="block text-sm uppercase tracking-widest text-gray-500 mb-3">
+                Name <span class="text-terracotta">*</span>
+              </label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                placeholder="Your name"
+                class="w-full py-3 border-0 border-b border-gray-300 focus:border-gray-800 focus:ring-0 bg-transparent text-gray-800 placeholder-gray-400"
+              />
+            </div>
+
+            <!-- Email -->
+            <div>
+              <label for="email" class="block text-sm uppercase tracking-widest text-gray-500 mb-3">
+                Email <span class="text-terracotta">*</span>
+              </label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                placeholder="you@example.com"
+                class="w-full py-3 border-0 border-b border-gray-300 focus:border-gray-800 focus:ring-0 bg-transparent text-gray-800 placeholder-gray-400"
+              />
+            </div>
+
+            <!-- Date -->
+            <div>
+              <label for="dates" class="block text-sm uppercase tracking-widest text-gray-500 mb-3">
+                Preferred Date
+              </label>
+              <input
+                type="date"
+                id="dates"
+                name="dates"
+                class="w-full py-3 border-0 border-b border-gray-300 focus:border-gray-800 focus:ring-0 bg-transparent text-gray-800"
+              />
+            </div>
+
+            <!-- Package -->
+            <div>
+              <label for="package" class="block text-sm uppercase tracking-widest text-gray-500 mb-3">
+                Package
+              </label>
+              <select
+                id="package"
+                name="package"
+                class="w-full py-3 border-0 border-b border-gray-300 focus:border-gray-800 focus:ring-0 bg-transparent text-gray-800 appearance-none cursor-pointer"
+              >
+                <option value="" disabled selected>Select a package</option>
+                <option value="golden-hour">Golden Hour - €180</option>
+                <option value="madrid-classic">Madrid Classic - €320</option>
+                <option value="full-experience">Full Experience - €450</option>
+              </select>
+            </div>
+
+            <!-- Message -->
+            <div>
+              <label for="message" class="block text-sm uppercase tracking-widest text-gray-500 mb-3">
+                Message <span class="text-terracotta">*</span>
+              </label>
+              <textarea
+                id="message"
+                name="message"
+                required
+                rows="4"
+                placeholder="Tell us about your plans..."
+                class="w-full py-3 border-0 border-b border-gray-300 focus:border-gray-800 focus:ring-0 bg-transparent text-gray-800 placeholder-gray-400 resize-none"
+              ></textarea>
+            </div>
+
+            <!-- Submit -->
+            <div class="pt-4">
+              <button type="submit" class="btn-simple">
+                Send Message
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="lg:col-span-2">
+          <div class="space-y-10">
+            <!-- Email -->
+            <div>
+              <p class="text-sm uppercase tracking-widest text-gray-400 mb-2">Email</p>
+              <a href="mailto:hello@madridamor.com" class="text-gray-800 hover:text-terracotta transition-colors">
+                hello@madridamor.com
+              </a>
+            </div>
+
+            <!-- WhatsApp -->
+            <div>
+              <p class="text-sm uppercase tracking-widest text-gray-400 mb-2">WhatsApp</p>
+              <a href="https://wa.me/34600000000" class="text-gray-800 hover:text-terracotta transition-colors">
+                +34 600 000 000
+              </a>
+              <p class="text-sm text-gray-400 mt-1">Quick response</p>
+            </div>
+
+            <!-- Location -->
+            <div>
+              <p class="text-sm uppercase tracking-widest text-gray-400 mb-2">Location</p>
+              <p class="text-gray-800">Madrid, Spain</p>
+              <p class="text-sm text-gray-400 mt-1">Sessions throughout the city</p>
+            </div>
+
+            <!-- Response -->
+            <div>
+              <p class="text-sm uppercase tracking-widest text-gray-400 mb-2">Response Time</p>
+              <p class="text-gray-800">Within 24 hours</p>
+            </div>
+
+            <!-- Instagram -->
+            <div class="pt-6 border-t border-gray-200">
+              <p class="text-sm uppercase tracking-widest text-gray-400 mb-4">Follow</p>
+              <a
+                href="https://instagram.com/arturo_madrid_weddings"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center text-gray-600 hover:text-terracotta transition-colors"
+              >
+                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                </svg>
+                @arturo_madrid_weddings
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section">
+    <div class="content-narrow text-block-centered">
+      <p class="text-xs uppercase tracking-widest text-gray-400 mb-4">Before You Book</p>
+      <h2>Questions</h2>
+
+      <div class="text-left mt-12 space-y-8">
+        <div>
+          <p class="font-semibold mb-2">How do I book a session?</p>
+          <p class="text-gray-500">
+            Fill out the form above or send a WhatsApp message. I'll respond within 24 hours to discuss your vision and dates.
+          </p>
+        </div>
+        <div>
+          <p class="font-semibold mb-2">What is the payment process?</p>
+          <p class="text-gray-500">
+            A 30% deposit secures your date. The remaining balance is due on the day of the session. Bank transfer, PayPal, or cash accepted.
+          </p>
+        </div>
+        <div>
+          <p class="font-semibold mb-2">What should we wear?</p>
+          <p class="text-gray-500">
+            I'll send a style guide after booking. Generally, solid colors and coordinating outfits work best. Avoid large logos.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  /* Custom select arrow */
+  select {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%239ca3af' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+    background-position: right 0 center;
+    background-repeat: no-repeat;
+    background-size: 1.5em 1.5em;
+  }
+</style>

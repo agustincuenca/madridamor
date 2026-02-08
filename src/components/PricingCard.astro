@@ -1,0 +1,93 @@
+---
+interface Props {
+  name: string;
+  duration: string;
+  photos: string;
+  price: string;
+  features: string[];
+  featured?: boolean;
+  lang?: string;
+}
+
+const {
+  name,
+  duration,
+  photos,
+  price,
+  features,
+  featured = false,
+  lang = "en",
+} = Astro.props;
+
+const buttonText = lang === "ko" ? "예약하기" : "Book Now";
+const popularText = lang === "ko" ? "인기" : "Most Popular";
+---
+
+<div
+  class:list={[
+    "bg-white rounded-2xl shadow-lg overflow-hidden transition-transform duration-300 hover:-translate-y-1",
+    featured && "ring-2 ring-terracotta",
+  ]}
+>
+  {featured && (
+    <div class="bg-terracotta text-white text-center py-2 font-display text-sm font-medium">
+      {popularText}
+    </div>
+  )}
+
+  <div class="p-6 md:p-8">
+    <!-- Package Name -->
+    <h3 class="font-display text-2xl font-bold text-gray-900 mb-2">
+      {name}
+    </h3>
+
+    <!-- Duration & Photos -->
+    <div class="text-gray-600 mb-4 space-y-1">
+      <p>{duration}</p>
+      <p>{photos}</p>
+    </div>
+
+    <!-- Price -->
+    <div class="mb-6">
+      <span class="text-terracotta font-display text-4xl font-bold">
+        {price}
+      </span>
+    </div>
+
+    <!-- Features List -->
+    <ul class="space-y-3 mb-8">
+      {features.map((feature) => (
+        <li class="flex items-start">
+          <svg
+            class="w-5 h-5 text-terracotta mt-0.5 mr-3 flex-shrink-0"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M5 13l4 4L19 7"
+            />
+          </svg>
+          <span class="text-gray-700">{feature}</span>
+        </li>
+      ))}
+    </ul>
+
+    <!-- CTA Button -->
+    <a
+      href="/contact"
+      class:list={[
+        "block w-full text-center py-3 px-6 rounded-full font-display font-medium transition-all duration-200",
+        featured
+          ? "btn-primary"
+          : "border-2 border-terracotta text-terracotta hover:bg-terracotta hover:text-white",
+      ]}
+    >
+      {buttonText}
+    </a>
+  </div>
+</div>

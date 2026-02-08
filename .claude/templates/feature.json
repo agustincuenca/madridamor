@@ -1,0 +1,13 @@
+{
+  "version": "1.0",
+  "id": "{YYYY-MM-DD-hhmmss}-{slug}",
+  "title": "{título inferido}",
+  "description": "{descripción}",
+  "original_request": "{texto exacto del usuario}",
+  "created_at": "{ISO timestamp}",
+  "updated_at": "{ISO timestamp}",
+  "status": "created",
+  "progress": 0,
+  "current_phase": "initial",
+  "tasks": []
+}

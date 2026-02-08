@@ -1,0 +1,56 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const images = [
+  { src: '/images/gallery/couple-street-laughing.jpg', alt: 'Couple laughing together in a stone-walled street' },
+  { src: '/images/gallery/wedding-bridge-nature.jpg', alt: 'Wedding couple on a wooden bridge surrounded by nature' },
+  { src: '/images/gallery/couple-closeup-intimate.jpg', alt: 'Intimate close-up portrait of a couple' },
+  { src: '/images/gallery/couple-almost-kiss-golden.jpg', alt: 'Couple about to kiss with golden sunset light' },
+  { src: '/images/gallery/wedding-playful-hug.jpg', alt: 'Playful wedding hug in a tree-lined path' },
+  { src: '/images/gallery/couple-field-sunset.jpg', alt: 'Couple embracing in a field at sunset' },
+  { src: '/images/gallery/couple-walking-avenue.jpg', alt: 'Couple walking together through a city avenue' },
+  { src: '/images/gallery/wedding-silhouettes-golden.jpg', alt: 'Wedding silhouettes bathed in golden light' },
+  { src: '/images/gallery/couple-lamppost-sunset.jpg', alt: 'Intimate moment by a lamppost at sunset' },
+  { src: '/images/gallery/couple-tender-touch.jpg', alt: 'Tender touch between a couple with traditional architecture' },
+  { src: '/images/gallery/couple-kiss-backlight.jpg', alt: 'Passionate kiss with backlight at golden hour' },
+  { src: '/images/gallery/wedding-bride-portrait.jpg', alt: 'Bride portrait with floral headpiece at sunset' },
+  { src: '/images/gallery/couple-lensflare-magic.jpg', alt: 'Couple with magical sun lens flare between them' },
+  { src: '/images/gallery/wedding-almost-kiss.jpg', alt: 'Wedding couple about to kiss at sunset' },
+  { src: '/images/gallery/couple-embrace-sunset.jpg', alt: 'Couple embracing outdoors at golden hour' },
+];
+---
+
+<Layout
+  title="Gallery"
+  description="Browse our portfolio of couple photography in Madrid. See real love stories captured at Retiro Park, Plaza Mayor, Royal Palace, and more iconic locations."
+  currentPage="gallery"
+  alternateKo="/ko/gallery/"
+>
+  <!-- Masonry Gallery Grid - Le Petit Loup Style -->
+  <section class="py-2">
+    <div class="masonry-grid">
+      {images.map((image, index) => (
+        <a href={image.src} class="masonry-item glightbox" data-gallery="gallery">
+          <img
+            src={image.src}
+            alt={image.alt}
+            loading={index < 6 ? 'eager' : 'lazy'}
+          />
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section bg-white">
+    <div class="content-narrow text-block-centered">
+      <p class="text-xs uppercase tracking-widest text-gray-400 mb-4">
+        Ready to create your story?
+      </p>
+      <h2>Let's capture your Madrid memories</h2>
+      <a href="/contact/" class="btn-simple mt-8">
+        Book Your Session
+      </a>
+    </div>
+  </section>
+</Layout>

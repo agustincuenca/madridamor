@@ -1,0 +1,76 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+  lang?: string;
+  currentPage?: string;
+  alternateKo?: string;
+  alternateEn?: string;
+  hideHeader?: boolean;
+}
+
+const {
+  title,
+  description = "Professional couple photography in Madrid. Capture your love story at iconic locations with experienced photographer Arturo.",
+  lang = "en",
+  currentPage = "",
+  alternateKo,
+  alternateEn,
+  hideHeader = false
+} = Astro.props;
+
+const siteUrl = "https://madridamor.com";
+---
+
+<!doctype html>
+<html lang={lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- SEO -->
+    <title>{title} | Madrid Amor Photography</title>
+    <meta name="description" content={description} />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={`${title} | Madrid Amor Photography`} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content={`${siteUrl}/images/og-image.jpg`} />
+
+    <!-- Hreflang for SEO -->
+    {alternateKo && <link rel="alternate" hreflang="ko" href={`${siteUrl}${alternateKo}`} />}
+    {alternateEn && <link rel="alternate" hreflang="en" href={`${siteUrl}${alternateEn}`} />}
+    <link rel="alternate" hreflang="x-default" href={siteUrl} />
+
+    <!-- GLightbox CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+  </head>
+  <body class="min-h-screen flex flex-col bg-white">
+    {!hideHeader && <Header lang={lang} currentPage={currentPage} />}
+
+    <main class="flex-grow">
+      <slot />
+    </main>
+
+    <Footer lang={lang} />
+    <WhatsAppButton />
+
+    <!-- GLightbox JS -->
+    <script is:inline src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
+    <script is:inline>
+      document.addEventListener('DOMContentLoaded', function() {
+        if (typeof GLightbox !== 'undefined') {
+          GLightbox({ selector: '.glightbox' });
+        }
+      });
+    </script>
+  </body>
+</html>
