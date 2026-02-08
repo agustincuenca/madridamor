@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+const base = import.meta.env.BASE_URL;
 ---
 
 <Layout
@@ -11,7 +12,7 @@ import Layout from '../layouts/Layout.astro';
   <!-- Hero Image -->
   <section class="py-2">
     <img
-      src="/images/arturo-photographer.jpg"
+      src={`${base}images/arturo-photographer.jpg`}
       alt="Arturo - Madrid Amor Photographer"
       class="w-full h-[70vh] object-cover"
     />
@@ -69,9 +70,9 @@ import Layout from '../layouts/Layout.astro';
   <!-- Why Madrid Section -->
   <section class="py-2">
     <div class="grid grid-cols-3 gap-2">
-      <img src="/images/gallery/photo-7.jpg" alt="Madrid street photography" class="w-full aspect-square object-cover" />
-      <img src="/images/gallery/photo-8.jpg" alt="Madrid golden hour" class="w-full aspect-square object-cover" />
-      <img src="/images/gallery/photo-9.jpg" alt="Madrid romantic location" class="w-full aspect-square object-cover" />
+      <img src={`${base}images/gallery/photo-7.jpg`} alt="Madrid street photography" class="w-full aspect-square object-cover" />
+      <img src={`${base}images/gallery/photo-8.jpg`} alt="Madrid golden hour" class="w-full aspect-square object-cover" />
+      <img src={`${base}images/gallery/photo-9.jpg`} alt="Madrid romantic location" class="w-full aspect-square object-cover" />
     </div>
   </section>
 
@@ -118,7 +119,7 @@ import Layout from '../layouts/Layout.astro';
       <p class="my-6">
         We'd love to hear about your plans. Send us a message and let's start planning your Madrid love story together.
       </p>
-      <a href="/contact/" class="btn-simple">Get in Touch</a>
+      <a href={`${base}contact/`} class="btn-simple">Get in Touch</a>
     </div>
   </section>
 </Layout>

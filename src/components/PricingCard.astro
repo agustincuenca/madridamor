@@ -21,6 +21,7 @@ const {
 
 const buttonText = lang === "ko" ? "예약하기" : "Book Now";
 const popularText = lang === "ko" ? "인기" : "Most Popular";
+const base = import.meta.env.BASE_URL;
 ---
 
 <div
@@ -79,7 +80,7 @@ const popularText = lang === "ko" ? "인기" : "Most Popular";
 
     <!-- CTA Button -->
     <a
-      href="/contact"
+      href={`${base}contact`}
       class:list={[
         "block w-full text-center py-3 px-6 rounded-full font-display font-medium transition-all duration-200",
         featured

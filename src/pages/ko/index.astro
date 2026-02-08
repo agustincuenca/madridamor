@@ -1,17 +1,18 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 
+const base = import.meta.env.BASE_URL;
 const galleryImages = [
-  { src: '/images/gallery/photo-1.jpg', alt: '마드리드 마요르 광장의 커플' },
-  { src: '/images/gallery/photo-2.jpg', alt: '레티로 공원에서의 로맨틱한 순간' },
-  { src: '/images/gallery/photo-3.jpg', alt: '왕궁에서의 사랑' },
-  { src: '/images/gallery/photo-4.jpg', alt: '마드리드의 황금빛 시간' },
-  { src: '/images/gallery/photo-5.jpg', alt: '그란 비아의 커플' },
-  { src: '/images/gallery/photo-6.jpg', alt: '템플로 데 데보드 일몰' },
-  { src: '/images/gallery/photo-7.jpg', alt: '마드리드 거리의 로맨스' },
-  { src: '/images/gallery/photo-8.jpg', alt: '마드리드 커플 스냅' },
-  { src: '/images/gallery/photo-9.jpg', alt: '마드리드 러브 스토리' },
-  { src: '/images/gallery/photo-10.jpg', alt: '마드리드 커플 세션' },
+  { src: `${base}images/gallery/photo-1.jpg`, alt: '마드리드 마요르 광장의 커플' },
+  { src: `${base}images/gallery/photo-2.jpg`, alt: '레티로 공원에서의 로맨틱한 순간' },
+  { src: `${base}images/gallery/photo-3.jpg`, alt: '왕궁에서의 사랑' },
+  { src: `${base}images/gallery/photo-4.jpg`, alt: '마드리드의 황금빛 시간' },
+  { src: `${base}images/gallery/photo-5.jpg`, alt: '그란 비아의 커플' },
+  { src: `${base}images/gallery/photo-6.jpg`, alt: '템플로 데 데보드 일몰' },
+  { src: `${base}images/gallery/photo-7.jpg`, alt: '마드리드 거리의 로맨스' },
+  { src: `${base}images/gallery/photo-8.jpg`, alt: '마드리드 커플 스냅' },
+  { src: `${base}images/gallery/photo-9.jpg`, alt: '마드리드 러브 스토리' },
+  { src: `${base}images/gallery/photo-10.jpg`, alt: '마드리드 커플 세션' },
 ];
 ---
 
@@ -24,14 +25,14 @@ const galleryImages = [
 >
   <!-- Video Hero Section - Lorryn Style -->
   <section class="video-hero">
-    <video autoplay muted loop playsinline poster="/images/gallery/photo-1.jpg">
-      <source src="/video/hero.mp4" type="video/mp4" />
+    <video autoplay muted loop playsinline poster={`${base}images/gallery/photo-1.jpg`}>
+      <source src={`${base}video/hero.mp4`} type="video/mp4" />
     </video>
     <div class="video-hero-overlay"></div>
     <div class="video-hero-content">
       <!-- Top -->
       <div class="flex justify-between items-start">
-        <a href="/ko/contact/" class="text-xs tracking-widest uppercase hover:opacity-70 transition-opacity">
+        <a href={`${base}ko/contact/`} class="text-xs tracking-widest uppercase hover:opacity-70 transition-opacity">
           문의하기
         </a>
         <div></div>

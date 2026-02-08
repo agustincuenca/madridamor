@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+const base = import.meta.env.BASE_URL;
 ---
 
 <Layout
@@ -12,7 +13,7 @@ import Layout from '../../layouts/Layout.astro';
   <!-- Hero Image -->
   <section class="py-2">
     <img
-      src="/images/arturo-photographer.jpg"
+      src={`${base}images/arturo-photographer.jpg`}
       alt="아르투로 - 마드리드 아모르 포토그래퍼"
       class="w-full h-[70vh] object-cover"
     />
@@ -70,9 +71,9 @@ import Layout from '../../layouts/Layout.astro';
   <!-- Why Madrid Section -->
   <section class="py-2">
     <div class="grid grid-cols-3 gap-2">
-      <img src="/images/gallery/photo-7.jpg" alt="마드리드 스트릿 촬영" class="w-full aspect-square object-cover" />
-      <img src="/images/gallery/photo-8.jpg" alt="마드리드 골든 아워" class="w-full aspect-square object-cover" />
-      <img src="/images/gallery/photo-9.jpg" alt="마드리드 로맨틱 장소" class="w-full aspect-square object-cover" />
+      <img src={`${base}images/gallery/photo-7.jpg`} alt="마드리드 스트릿 촬영" class="w-full aspect-square object-cover" />
+      <img src={`${base}images/gallery/photo-8.jpg`} alt="마드리드 골든 아워" class="w-full aspect-square object-cover" />
+      <img src={`${base}images/gallery/photo-9.jpg`} alt="마드리드 로맨틱 장소" class="w-full aspect-square object-cover" />
     </div>
   </section>
 
@@ -119,7 +120,7 @@ import Layout from '../../layouts/Layout.astro';
       <p class="my-6">
         당신의 계획을 듣고 싶습니다. 메시지를 보내주시면 함께 마드리드 러브 스토리를 계획해봐요.
       </p>
-      <a href="/ko/contact/" class="btn-simple">연락하기</a>
+      <a href={`${base}ko/contact/`} class="btn-simple">연락하기</a>
     </div>
   </section>
 </Layout>

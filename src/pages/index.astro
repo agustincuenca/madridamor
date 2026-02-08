@@ -1,17 +1,18 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
+const base = import.meta.env.BASE_URL;
 const galleryImages = [
-  { src: '/images/gallery/photo-1.jpg', alt: 'Couple at Plaza Mayor Madrid' },
-  { src: '/images/gallery/photo-2.jpg', alt: 'Romantic moment at Retiro Park' },
-  { src: '/images/gallery/photo-3.jpg', alt: 'Love at Royal Palace' },
-  { src: '/images/gallery/photo-4.jpg', alt: 'Golden hour in Madrid' },
-  { src: '/images/gallery/photo-5.jpg', alt: 'Couple in Gran Via' },
-  { src: '/images/gallery/photo-6.jpg', alt: 'Temple of Debod sunset' },
-  { src: '/images/gallery/photo-7.jpg', alt: 'Madrid streets romance' },
-  { src: '/images/gallery/photo-8.jpg', alt: 'Couple photoshoot Madrid' },
-  { src: '/images/gallery/photo-9.jpg', alt: 'Love story Madrid' },
-  { src: '/images/gallery/photo-10.jpg', alt: 'Madrid couple session' },
+  { src: `${base}images/gallery/photo-1.jpg`, alt: 'Couple at Plaza Mayor Madrid' },
+  { src: `${base}images/gallery/photo-2.jpg`, alt: 'Romantic moment at Retiro Park' },
+  { src: `${base}images/gallery/photo-3.jpg`, alt: 'Love at Royal Palace' },
+  { src: `${base}images/gallery/photo-4.jpg`, alt: 'Golden hour in Madrid' },
+  { src: `${base}images/gallery/photo-5.jpg`, alt: 'Couple in Gran Via' },
+  { src: `${base}images/gallery/photo-6.jpg`, alt: 'Temple of Debod sunset' },
+  { src: `${base}images/gallery/photo-7.jpg`, alt: 'Madrid streets romance' },
+  { src: `${base}images/gallery/photo-8.jpg`, alt: 'Couple photoshoot Madrid' },
+  { src: `${base}images/gallery/photo-9.jpg`, alt: 'Love story Madrid' },
+  { src: `${base}images/gallery/photo-10.jpg`, alt: 'Madrid couple session' },
 ];
 ---
 
@@ -23,14 +24,14 @@ const galleryImages = [
 >
   <!-- Video Hero Section - Lorryn Style -->
   <section class="video-hero">
-    <video autoplay muted loop playsinline poster="/images/gallery/photo-1.jpg">
-      <source src="/video/hero.mp4" type="video/mp4" />
+    <video autoplay muted loop playsinline poster={`${base}images/gallery/photo-1.jpg`}>
+      <source src={`${base}video/hero.mp4`} type="video/mp4" />
     </video>
     <div class="video-hero-overlay"></div>
     <div class="video-hero-content">
       <!-- Top -->
       <div class="flex justify-between items-start">
-        <a href="/contact/" class="text-xs tracking-widest uppercase hover:opacity-70 transition-opacity">
+        <a href={`${base}contact/`} class="text-xs tracking-widest uppercase hover:opacity-70 transition-opacity">
           Enquire
         </a>
         <div></div>

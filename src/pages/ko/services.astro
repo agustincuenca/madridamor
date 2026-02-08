@@ -2,15 +2,16 @@
 import Layout from '../../layouts/Layout.astro';
 import PhotoCarousel from '../../components/PhotoCarousel.astro';
 
+const base = import.meta.env.BASE_URL;
 const carouselImages = [
-  { src: '/images/gallery/madrid-couple-photography-sunset-field.jpg', alt: '마드리드 석양 필드에서의 커플 촬영' },
-  { src: '/images/gallery/madrid-wedding-bride-portrait-sunset.jpg', alt: '마드리드 석양의 신부 초상화' },
-  { src: '/images/gallery/madrid-couple-photography-laughing-stone-street.jpg', alt: '마드리드 돌길에서 웃고 있는 커플' },
-  { src: '/images/gallery/madrid-wedding-photography-nature-bridge.jpg', alt: '마드리드 자연 다리에서의 웨딩 촬영' },
-  { src: '/images/gallery/madrid-couple-photography-golden-hour-kiss.jpg', alt: '마드리드 골든 아워 커플 키스' },
-  { src: '/images/gallery/madrid-couple-photography-romantic-sunset.jpg', alt: '마드리드 로맨틱 석양 커플 촬영' },
-  { src: '/images/gallery/madrid-wedding-photography-golden-silhouettes.jpg', alt: '마드리드 골든 실루엣 웨딩 촬영' },
-  { src: '/images/gallery/madrid-couple-photography-walking-avenue.jpg', alt: '마드리드 거리를 걷는 커플' },
+  { src: `${base}images/gallery/madrid-couple-photography-sunset-field.jpg`, alt: '마드리드 석양 필드에서의 커플 촬영' },
+  { src: `${base}images/gallery/madrid-wedding-bride-portrait-sunset.jpg`, alt: '마드리드 석양의 신부 초상화' },
+  { src: `${base}images/gallery/madrid-couple-photography-laughing-stone-street.jpg`, alt: '마드리드 돌길에서 웃고 있는 커플' },
+  { src: `${base}images/gallery/madrid-wedding-photography-nature-bridge.jpg`, alt: '마드리드 자연 다리에서의 웨딩 촬영' },
+  { src: `${base}images/gallery/madrid-couple-photography-golden-hour-kiss.jpg`, alt: '마드리드 골든 아워 커플 키스' },
+  { src: `${base}images/gallery/madrid-couple-photography-romantic-sunset.jpg`, alt: '마드리드 로맨틱 석양 커플 촬영' },
+  { src: `${base}images/gallery/madrid-wedding-photography-golden-silhouettes.jpg`, alt: '마드리드 골든 실루엣 웨딩 촬영' },
+  { src: `${base}images/gallery/madrid-couple-photography-walking-avenue.jpg`, alt: '마드리드 거리를 걷는 커플' },
 ];
 
 const packages = [
@@ -93,7 +94,7 @@ const packages = [
     <div class="content-wrapper">
       <div class="service-section">
         <div class="service-image">
-          <img src="/images/gallery/photo-4.jpg" alt="마드리드 퀵 스냅 세션" class="w-full aspect-[4/5] object-cover" />
+          <img src={`${base}images/gallery/photo-4.jpg`} alt="마드리드 퀵 스냅 세션" class="w-full aspect-[4/5] object-cover" />
         </div>
         <div class="service-content">
           <p class="text-xs uppercase tracking-widest text-gray-400 mb-4">빠르고 간편한 촬영</p>
@@ -110,7 +111,7 @@ const packages = [
             </ul>
           </div>
           <p class="text-2xl text-terracotta mb-6" style="font-family: 'Chulapa', Georgia, serif;">€200부터</p>
-          <a href="/ko/contact/?package=quick-snap" class="btn-simple">문의하기</a>
+          <a href={`${base}ko/contact/?package=quick-snap`} class="btn-simple">문의하기</a>
         </div>
       </div>
     </div>
@@ -121,7 +122,7 @@ const packages = [
     <div class="content-wrapper">
       <div class="service-section">
         <div class="service-image">
-          <img src="/images/gallery/photo-5.jpg" alt="마드리드 클래식 세션" class="w-full aspect-[4/5] object-cover" />
+          <img src={`${base}images/gallery/photo-5.jpg`} alt="마드리드 클래식 세션" class="w-full aspect-[4/5] object-cover" />
         </div>
         <div class="service-content">
           <p class="text-xs uppercase tracking-widest text-terracotta mb-4">인기 패키지</p>
@@ -138,7 +139,7 @@ const packages = [
             </ul>
           </div>
           <p class="text-2xl text-terracotta mb-6" style="font-family: 'Chulapa', Georgia, serif;">€380부터</p>
-          <a href="/ko/contact/?package=madrid-classic" class="btn-simple">문의하기</a>
+          <a href={`${base}ko/contact/?package=madrid-classic`} class="btn-simple">문의하기</a>
         </div>
       </div>
     </div>
@@ -149,7 +150,7 @@ const packages = [
     <div class="content-wrapper">
       <div class="service-section">
         <div class="service-image">
-          <img src="/images/gallery/photo-6.jpg" alt="카스티소 익스피리언스 세션" class="w-full aspect-[4/5] object-cover" />
+          <img src={`${base}images/gallery/photo-6.jpg`} alt="카스티소 익스피리언스 세션" class="w-full aspect-[4/5] object-cover" />
         </div>
         <div class="service-content">
           <p class="text-xs uppercase tracking-widest text-gray-400 mb-4">풀 익스피리언스</p>
@@ -166,7 +167,7 @@ const packages = [
             </ul>
           </div>
           <p class="text-2xl text-terracotta mb-6" style="font-family: 'Chulapa', Georgia, serif;">€700부터</p>
-          <a href="/ko/contact/?package=castizo-experience" class="btn-simple">문의하기</a>
+          <a href={`${base}ko/contact/?package=castizo-experience`} class="btn-simple">문의하기</a>
         </div>
       </div>
     </div>
@@ -210,7 +211,7 @@ const packages = [
     <div class="content-narrow text-block-centered">
       <p class="text-sm text-gray-500">
         커플이 아니신가요? 괜찮습니다. 가족, 혼자 여행하는 분, 특별한 행사도 촬영합니다.
-        <a href="/ko/contact/?type=other" class="text-terracotta hover:underline">연락해 주세요</a> — 완벽한 경험을 만들어 드리겠습니다.
+        <a href={`${base}ko/contact/?type=other`} class="text-terracotta hover:underline">연락해 주세요</a> — 완벽한 경험을 만들어 드리겠습니다.
       </p>
       <p class="text-sm text-gray-400 mt-4 italic">
         맞춤 패키지도 가능합니다 — 원하시는 촬영에 대해 알려주시면 완벽한 경험을 만들어 드리겠습니다.

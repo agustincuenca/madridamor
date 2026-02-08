@@ -2,15 +2,16 @@
 import Layout from '../layouts/Layout.astro';
 import PhotoCarousel from '../components/PhotoCarousel.astro';
 
+const base = import.meta.env.BASE_URL;
 const carouselImages = [
-  { src: '/images/gallery/madrid-couple-photography-sunset-field.jpg', alt: 'Couple photography in Madrid sunset field' },
-  { src: '/images/gallery/madrid-wedding-bride-portrait-sunset.jpg', alt: 'Bride portrait at sunset in Madrid' },
-  { src: '/images/gallery/madrid-couple-photography-laughing-stone-street.jpg', alt: 'Couple laughing on stone street in Madrid' },
-  { src: '/images/gallery/madrid-wedding-photography-nature-bridge.jpg', alt: 'Wedding photography at nature bridge in Madrid' },
-  { src: '/images/gallery/madrid-couple-photography-golden-hour-kiss.jpg', alt: 'Couple kiss during golden hour in Madrid' },
-  { src: '/images/gallery/madrid-couple-photography-romantic-sunset.jpg', alt: 'Romantic sunset couple photography in Madrid' },
-  { src: '/images/gallery/madrid-wedding-photography-golden-silhouettes.jpg', alt: 'Wedding golden silhouettes in Madrid' },
-  { src: '/images/gallery/madrid-couple-photography-walking-avenue.jpg', alt: 'Couple walking along avenue in Madrid' },
+  { src: `${base}images/gallery/madrid-couple-photography-sunset-field.jpg`, alt: 'Couple photography in Madrid sunset field' },
+  { src: `${base}images/gallery/madrid-wedding-bride-portrait-sunset.jpg`, alt: 'Bride portrait at sunset in Madrid' },
+  { src: `${base}images/gallery/madrid-couple-photography-laughing-stone-street.jpg`, alt: 'Couple laughing on stone street in Madrid' },
+  { src: `${base}images/gallery/madrid-wedding-photography-nature-bridge.jpg`, alt: 'Wedding photography at nature bridge in Madrid' },
+  { src: `${base}images/gallery/madrid-couple-photography-golden-hour-kiss.jpg`, alt: 'Couple kiss during golden hour in Madrid' },
+  { src: `${base}images/gallery/madrid-couple-photography-romantic-sunset.jpg`, alt: 'Romantic sunset couple photography in Madrid' },
+  { src: `${base}images/gallery/madrid-wedding-photography-golden-silhouettes.jpg`, alt: 'Wedding golden silhouettes in Madrid' },
+  { src: `${base}images/gallery/madrid-couple-photography-walking-avenue.jpg`, alt: 'Couple walking along avenue in Madrid' },
 ];
 
 const packages = [
@@ -92,7 +93,7 @@ const packages = [
     <div class="content-wrapper">
       <div class="service-section">
         <div class="service-image">
-          <img src="/images/gallery/photo-4.jpg" alt="Madrid Quick Snap Session" class="w-full aspect-[4/5] object-cover" />
+          <img src={`${base}images/gallery/photo-4.jpg`} alt="Madrid Quick Snap Session" class="w-full aspect-[4/5] object-cover" />
         </div>
         <div class="service-content">
           <p class="text-xs uppercase tracking-widest text-gray-400 mb-4">Quick & Easy</p>
@@ -109,7 +110,7 @@ const packages = [
             </ul>
           </div>
           <p class="text-2xl text-terracotta mb-6" style="font-family: 'Chulapa', Georgia, serif;">From €200</p>
-          <a href="/contact/?package=quick-snap" class="btn-simple">Enquire</a>
+          <a href={`${base}contact/?package=quick-snap`} class="btn-simple">Enquire</a>
         </div>
       </div>
     </div>
@@ -120,7 +121,7 @@ const packages = [
     <div class="content-wrapper">
       <div class="service-section">
         <div class="service-image">
-          <img src="/images/gallery/photo-5.jpg" alt="Madrid Classic Session" class="w-full aspect-[4/5] object-cover" />
+          <img src={`${base}images/gallery/photo-5.jpg`} alt="Madrid Classic Session" class="w-full aspect-[4/5] object-cover" />
         </div>
         <div class="service-content">
           <p class="text-xs uppercase tracking-widest text-terracotta mb-4">Most Popular</p>
@@ -137,7 +138,7 @@ const packages = [
             </ul>
           </div>
           <p class="text-2xl text-terracotta mb-6" style="font-family: 'Chulapa', Georgia, serif;">From €380</p>
-          <a href="/contact/?package=madrid-classic" class="btn-simple">Enquire</a>
+          <a href={`${base}contact/?package=madrid-classic`} class="btn-simple">Enquire</a>
         </div>
       </div>
     </div>
@@ -148,7 +149,7 @@ const packages = [
     <div class="content-wrapper">
       <div class="service-section">
         <div class="service-image">
-          <img src="/images/gallery/photo-6.jpg" alt="The Castizo Experience Session" class="w-full aspect-[4/5] object-cover" />
+          <img src={`${base}images/gallery/photo-6.jpg`} alt="The Castizo Experience Session" class="w-full aspect-[4/5] object-cover" />
         </div>
         <div class="service-content">
           <p class="text-xs uppercase tracking-widest text-gray-400 mb-4">The Full Experience</p>
@@ -165,7 +166,7 @@ const packages = [
             </ul>
           </div>
           <p class="text-2xl text-terracotta mb-6" style="font-family: 'Chulapa', Georgia, serif;">From €700</p>
-          <a href="/contact/?package=castizo-experience" class="btn-simple">Enquire</a>
+          <a href={`${base}contact/?package=castizo-experience`} class="btn-simple">Enquire</a>
         </div>
       </div>
     </div>
@@ -209,7 +210,7 @@ const packages = [
     <div class="content-narrow text-block-centered">
       <p class="text-sm text-gray-500">
         Not a couple? No problem. We also photograph families, solo travelers, and special occasions.
-        <a href="/contact/?type=other" class="text-terracotta hover:underline">Get in touch</a> and we'll create something perfect for you.
+        <a href={`${base}contact/?type=other`} class="text-terracotta hover:underline">Get in touch</a> and we'll create something perfect for you.
       </p>
       <p class="text-sm text-gray-400 mt-4 italic">
         Custom packages available — tell us about your vision and we'll create the perfect experience for you.

@@ -1,22 +1,23 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 
+const base = import.meta.env.BASE_URL;
 const images = [
-  { src: '/images/gallery/madrid-couple-portrait-intimate-closeup.jpg', alt: '마드리드 커플 포트레이트 - 친밀한 클로즈업' },
-  { src: '/images/gallery/madrid-couple-photography-tender-moment.jpg', alt: '마드리드 커플 스냅 - 전통 건축물 배경의 다정한 순간' },
-  { src: '/images/gallery/madrid-couple-photography-passionate-kiss.jpg', alt: '마드리드 커플 촬영 - 골든 아워 열정적인 키스' },
-  { src: '/images/gallery/madrid-couple-photography-sunset-field.jpg', alt: '마드리드 커플 스냅 - 석양의 들판에서 포옹' },
-  { src: '/images/gallery/madrid-wedding-bride-portrait-sunset.jpg', alt: '마드리드 웨딩 촬영 - 석양의 신부 초상화' },
-  { src: '/images/gallery/madrid-couple-photography-laughing-stone-street.jpg', alt: '마드리드 커플 스냅 - 돌담 거리에서 함께 웃는 커플' },
-  { src: '/images/gallery/madrid-wedding-photography-nature-bridge.jpg', alt: '마드리드 웨딩 촬영 - 자연 속 나무 다리 위의 커플' },
-  { src: '/images/gallery/madrid-couple-photography-walking-avenue.jpg', alt: '마드리드 커플 촬영 - 도시 대로를 함께 걷는 모습' },
-  { src: '/images/gallery/madrid-couple-photography-golden-hour-kiss.jpg', alt: '마드리드 골든 아워 커플 촬영 - 석양 아래 키스 직전' },
-  { src: '/images/gallery/madrid-couple-photography-romantic-sunset.jpg', alt: '마드리드 로맨틱 커플 촬영 - 석양의 친밀한 순간' },
-  { src: '/images/gallery/madrid-wedding-photography-golden-silhouettes.jpg', alt: '마드리드 웨딩 촬영 - 황금빛에 물든 실루엣' },
-  { src: '/images/gallery/madrid-couple-photography-magical-light.jpg', alt: '마드리드 커플 촬영 - 마법 같은 빛의 렌즈 플레어' },
-  { src: '/images/gallery/madrid-couple-photography-outdoor-embrace.jpg', alt: '마드리드 야외 커플 촬영 - 골든 아워 포옹' },
-  { src: '/images/gallery/madrid-wedding-photography-playful-hug.jpg', alt: '마드리드 웨딩 촬영 - 나무 길에서의 장난스러운 포옹' },
-  { src: '/images/gallery/madrid-wedding-photography-sunset-kiss.jpg', alt: '마드리드 웨딩 촬영 - 석양에서 키스 직전의 커플' },
+  { src: `${base}images/gallery/madrid-couple-portrait-intimate-closeup.jpg`, alt: '마드리드 커플 포트레이트 - 친밀한 클로즈업' },
+  { src: `${base}images/gallery/madrid-couple-photography-tender-moment.jpg`, alt: '마드리드 커플 스냅 - 전통 건축물 배경의 다정한 순간' },
+  { src: `${base}images/gallery/madrid-couple-photography-passionate-kiss.jpg`, alt: '마드리드 커플 촬영 - 골든 아워 열정적인 키스' },
+  { src: `${base}images/gallery/madrid-couple-photography-sunset-field.jpg`, alt: '마드리드 커플 스냅 - 석양의 들판에서 포옹' },
+  { src: `${base}images/gallery/madrid-wedding-bride-portrait-sunset.jpg`, alt: '마드리드 웨딩 촬영 - 석양의 신부 초상화' },
+  { src: `${base}images/gallery/madrid-couple-photography-laughing-stone-street.jpg`, alt: '마드리드 커플 스냅 - 돌담 거리에서 함께 웃는 커플' },
+  { src: `${base}images/gallery/madrid-wedding-photography-nature-bridge.jpg`, alt: '마드리드 웨딩 촬영 - 자연 속 나무 다리 위의 커플' },
+  { src: `${base}images/gallery/madrid-couple-photography-walking-avenue.jpg`, alt: '마드리드 커플 촬영 - 도시 대로를 함께 걷는 모습' },
+  { src: `${base}images/gallery/madrid-couple-photography-golden-hour-kiss.jpg`, alt: '마드리드 골든 아워 커플 촬영 - 석양 아래 키스 직전' },
+  { src: `${base}images/gallery/madrid-couple-photography-romantic-sunset.jpg`, alt: '마드리드 로맨틱 커플 촬영 - 석양의 친밀한 순간' },
+  { src: `${base}images/gallery/madrid-wedding-photography-golden-silhouettes.jpg`, alt: '마드리드 웨딩 촬영 - 황금빛에 물든 실루엣' },
+  { src: `${base}images/gallery/madrid-couple-photography-magical-light.jpg`, alt: '마드리드 커플 촬영 - 마법 같은 빛의 렌즈 플레어' },
+  { src: `${base}images/gallery/madrid-couple-photography-outdoor-embrace.jpg`, alt: '마드리드 야외 커플 촬영 - 골든 아워 포옹' },
+  { src: `${base}images/gallery/madrid-wedding-photography-playful-hug.jpg`, alt: '마드리드 웨딩 촬영 - 나무 길에서의 장난스러운 포옹' },
+  { src: `${base}images/gallery/madrid-wedding-photography-sunset-kiss.jpg`, alt: '마드리드 웨딩 촬영 - 석양에서 키스 직전의 커플' },
 ];
 ---
 
@@ -49,7 +50,7 @@ const images = [
         당신의 이야기를 만들 준비가 되셨나요?
       </p>
       <h2>마드리드의 추억을 담아드립니다</h2>
-      <a href="/ko/contact/" class="btn-simple mt-8">
+      <a href={`${base}ko/contact/`} class="btn-simple mt-8">
         촬영 예약하기
       </a>
     </div>

@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+const base = import.meta.env.BASE_URL;
 ---
 
 <Layout
@@ -28,7 +29,7 @@ import Layout from '../../layouts/Layout.astro';
         >
           WhatsApp으로 연락하기
         </a>
-        <a href="/ko/gallery/" class="btn-simple" style="border-color: #d1d5db; color: #6b7280;">
+        <a href={`${base}ko/gallery/`} class="btn-simple" style="border-color: #d1d5db; color: #6b7280;">
           갤러리 보기
         </a>
       </div>
